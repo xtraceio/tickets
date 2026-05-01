@@ -1,0 +1,99 @@
+{
+  "enabled": true,
+  "mode": "dry-run",
+  "dryRun": true,
+  "policyVersion": "1.0",
+  "reviewIp": "85.208.96.194",
+  "representativeGroupScenario": {
+    "id": "G003",
+    "code": "WAF-G003",
+    "name": "고객사 중요 필터 검토",
+    "priorityScore": 65,
+    "reason": "고객사 커스텀 필터에 해당하는 중요 탐지가 확인되어 IP 차단 검토가 필요합니다.",
+    "representativeLowLevelScenario": "WAF-S007"
+  },
+  "matchedGroupScenarios": [
+    "WAF-G003"
+  ],
+  "matchedScenarios": [
+    7,
+    10
+  ],
+  "candidateGroups": [
+    "WAF-G003"
+  ],
+  "candidateIps": [
+    {
+      "ip": "85.208.96.194",
+      "representativeGroupScenario": "WAF-G003",
+      "matchedGroupScenarios": [
+        "WAF-G003"
+      ],
+      "matchedScenarios": [
+        7,
+        10
+      ],
+      "totalEvents": 1,
+      "blockedEvents": 0,
+      "detectedEvents": 1,
+      "uniquePaths": 1,
+      "suppression": {
+        "suppressed": false,
+        "reason": "",
+        "matchedRuleId": "",
+        "matchedValue": "",
+        "action": ""
+      },
+      "allowlist": {
+        "checked": true,
+        "matched": false,
+        "matchedRuleId": "",
+        "matchedValue": "",
+        "action": "",
+        "reason": ""
+      },
+      "ttlDays": 1,
+      "maxIpsPerRun": 1,
+      "action": "dry-run-only",
+      "policyWouldBlock": true,
+      "policyWouldBlockReason": "Auto-block candidate is present, but apply remains disabled by current policy. Dry-run evidence only.",
+      "wouldBlock": false,
+      "wouldBlockReason": "Auto-block candidate is present, but apply remains disabled by current policy. Dry-run evidence only."
+    }
+  ],
+  "candidateCount": 1,
+  "dryRunCandidate": true,
+  "wouldAutoBlockIfSafetyReady": true,
+  "policyWouldBlock": true,
+  "policyWouldBlockReason": "Auto-block candidate is present, but apply remains disabled by current policy. Dry-run evidence only.",
+  "wouldBlock": false,
+  "wouldBlockReason": "Candidate exists, but auto apply remains disabled. This plan is for dry-run review only.",
+  "autoApplyReady": false,
+  "safetyChecks": {
+    "autoMode": "dry-run",
+    "applyEnabled": false,
+    "dryRun": true,
+    "maxIpsPerRun": 1,
+    "ttlDays": 1,
+    "allowlistChecked": true,
+    "suppressionChecked": true,
+    "privateIpExcluded": true,
+    "clickedManualBlock": false,
+    "clickedConfirm": false,
+    "clickedSaveOrConfirm": false,
+    "autoBlockExecuted": false
+  },
+  "clickedManualBlock": false,
+  "clickedConfirm": false,
+  "clickedSaveOrConfirm": false,
+  "autoBlockExecuted": false,
+  "reason": "Dry-run candidate confirmed for WAF-G003, but auto apply remains blocked: rollback policy is required but rollback execution is not enabled",
+  "blockedBySafety": [
+    "rollback policy is required but rollback execution is not enabled"
+  ],
+  "notes": [
+    "Dry-run only: no PLURA IP block UI/API save, register, or confirm action was attempted.",
+    "Threat-intel only (WAF-G007) and AI only (WAF-G008) group matches do not become standalone auto-block dry-run candidates.",
+    "Audit log target: C:\\git\\quark\\quark\\artifacts\\waf\\auto-block-audit.jsonl"
+  ]
+}
