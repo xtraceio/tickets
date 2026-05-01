@@ -1,0 +1,47 @@
+{
+  "tenantId": "abcdEFGH",
+  "reportType": "waf",
+  "reportDate": "2026-05-01",
+  "runId": "plura-waf-20260501T120029Z",
+  "publishedAt": "2026-05-01T21:00:55+09:00",
+  "sourceRepo": "quark",
+  "representativeGroupScenario": "WAF-G003",
+  "matchedGroupScenarios": [
+    "WAF-G003"
+  ],
+  "matchedScenarios": [
+    7,
+    10
+  ],
+  "attackerIp": "85.208.96.194",
+  "totalEvents": 1,
+  "mailSent": false,
+  "autoBlockExecuted": false,
+  "autoBlockDryRunIncluded": true,
+  "autoBlockPlanMode": "dry-run",
+  "autoBlockWouldBlock": false,
+  "autoBlockCandidateCount": 1,
+  "mermaidDocsIncluded": true,
+  "includedDocs": [
+    "docs/waf-scenario-redesign.md",
+    "docs/waf-group-scenario-policy.md",
+    "docs/waf-scenario-management.md",
+    "docs/waf-scenario-evaluation-methodology.md"
+  ],
+  "diagramsFile": "waf-diagrams.md",
+  "includedFiles": [
+    "waf-payload.json",
+    "waf-summary.json",
+    "waf-summary.md",
+    "waf-preview.html",
+    "auto-block-dry-run.json",
+    "auto-block-dry-run.md",
+    "docs/waf-scenario-redesign.md",
+    "docs/waf-group-scenario-policy.md",
+    "docs/waf-scenario-management.md",
+    "docs/waf-scenario-evaluation-methodology.md",
+    "waf-diagrams.md",
+    "report-meta.json"
+  ],
+  "skippedOptionalFiles": []
+}
