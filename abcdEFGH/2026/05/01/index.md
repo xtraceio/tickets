@@ -2,4 +2,5 @@
 
 | Time | Run ID | Representative | Attacker IP | Events | Mail Sent | Path |
 |---|---|---|---|---:|---|---|
-| 12:34:03 | plura-waf-20260501T031612Z | WAF-G005 | 172.212.217.10 | 20 | false | runs/plura-waf-20260501T031612Z |
+
+| 12:35:33 | plura-waf-20260501T031612Z | WAF-G005 | 172.212.217.10 | 20 | false | runs/plura-waf-20260501T031612Z |
