@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="margin:0;padding:0;background:#f4f7fb;color:#172033;font-family:Arial,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;">
+  <div style="max-width:1120px;margin:0 auto;padding:24px;">
+    <div style="background:#123456;color:#fff;padding:22px 26px;border-radius:8px;">
+      <h1 style="margin:0 0 8px;font-size:22px;">[PLURA-XDR] WAF 복합 공격 유형 검토 필요 - 88.151.33.89 / WAF-G005</h1>
+      <p style="margin:0;color:#d8e6f7;">대표 운영형 시나리오: WAF-G005 복합 공격 유형 검토. 공격자 IP 172.202.118.119에서 오늘 총 1개 정탐이 탐지되었습니다. 동일 IP에서 복수 공격 유형과 다수 경로가 함께 확인되어 IP주소 수동차단 검토가 필요합니다.</p>
+    </div>
+    <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:separate;border-spacing:8px;margin:16px 0;">
+      <tr>
+        <td style="background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;"><div style="font-size:12px;color:#667085;">대표 운영형</div><div style="margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;">WAF-G005</div></td>
+        <td style="background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;"><div style="font-size:12px;color:#667085;">공격자 IP</div><div style="margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;">172.202.118.119</div></td>
+        <td style="background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;"><div style="font-size:12px;color:#667085;">총 이벤트 수</div><div style="margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;">1</div></td>
+        <td style="background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;"><div style="font-size:12px;color:#667085;">차단 수</div><div style="margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;">1</div></td>
+        <td style="background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;"><div style="font-size:12px;color:#667085;">탐지 수</div><div style="margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;">0</div></td>
+        <td style="background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;"><div style="font-size:12px;color:#667085;">고유 경로 수</div><div style="margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;">1</div></td>
+        <td style="background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;"><div style="font-size:12px;color:#667085;">IP 차단 후보</div><div style="margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;">예</div></td>
+      </tr>
+    </table>
+    <div style="background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;border-left:4px solid #c2410c;">
+      <h2 style="font-size:18px;margin:0 0 10px;color:#172033;">IP 차단 검토 안내</h2>
+      <p style="margin:0 0 8px;">대표 운영형 시나리오 WAF-G005 복합 공격 유형 검토 매칭: 동일 IP 88.151.33.89에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.</p>
+      <p style="margin:0 0 8px;">웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 차단을 검토하세요.</p>
+      <p style="margin:0 0 8px;">자동 IP 차단은 수행하지 않았습니다.</p>
+      <p style="margin:0 0 8px;">수동차단 버튼/저장/확인 클릭은 수행하지 않습니다.</p>
+      <p style="margin:0 0 8px;">사용자 수동 확인 대기: false / 브라우저 유지: false</p>
+      <p style="margin:0 0 8px;">확인 대상 IP: - / 자동 IP 차단 수행: false</p>
+      <p style="margin:0 0 8px;">브라우저 유지 대기 상태가 아닙니다.</p>
+      <p style="margin:0 0 8px;">브라우저 안내 overlay 표시: false / 수동차단 버튼 위치 확인: false</p>
+      <p style="margin:0 0 8px;">수동차단 버튼 selector: -</p>
+      <p style="margin:0 0 8px;">수동차단 버튼 클릭: false / 저장·확인 클릭: false</p>
+      <p style="margin:0 0 8px;">실제 차단은 웹 화면에서 요청 경로와 탐지/차단 이력을 확인한 뒤 수행하세요.</p>
+      <p style="margin:0;">참고: <a href="https://docs.plura.io/ko/v6/fn/comm/ipblock/manual" style="color:#1d4ed8;">수동 IP 차단 매뉴얼</a></p>
+    </div>
+    <div style="background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;margin-top:16px;border-left:4px solid #2f6fed;background:#ffffff;">
+      <h2 style="font-size:18px;margin:0 0 10px;color:#172033;">Allowlist / Suppression</h2>
+      <p style="margin:0 0 8px;">suppressed: false</p>
+      <p style="margin:0 0 8px;">result: allowlist suppression 미적용</p>
+      <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;">
+        <tbody>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Rule</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Value</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Field</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">IP</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Reason</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Action</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;margin-top:16px;">
+      <h2 style="font-size:18px;margin:0 0 10px;color:#172033;">매칭된 시나리오</h2>
+      <p style="margin:0 0 8px;">선택: 1-11 =&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]</p>
+      <p style="margin:0 0 8px;">matchedScenarios: [5, 10]</p>
+      <p style="margin:0 0 8px;">matchedCount: 2</p>
+      <p style="margin:0 0 8px;">representativeScenario: WAF-S005 Scanning Critical threshold / score 65</p>
+      <p style="margin:0 0 8px;">representativeReason: 동일 IP 88.151.33.89에서 스캐닝성 CRITICAL 이벤트가 7건 확인되어 기준 3건 이상입니다.</p>
+      <div style="margin:14px 0;padding:10px;border-left:4px solid #2f6fed;background:#f8fbff;">
+        <h3 style="font-size:15px;margin:0 0 8px;color:#172033;">운영형 대표 시나리오</h3>
+        <p style="margin:0 0 6px;">matchedGroupScenarios: [WAF-G001, WAF-G005]</p>
+        <p style="margin:0 0 6px;">representativeGroupScenario: WAF-G005 복합 공격 유형 검토 / score 80</p>
+        <p style="margin:0 0 6px;">representativeLowLevelScenario: WAF-S010</p>
+        <p style="margin:0;">reason: 동일 IP 88.151.33.89에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.</p>
+      </div>
+      <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;">
+        <thead>
+          <tr>
+            <th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Group</th>
+            <th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Score</th>
+            <th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Matched</th>
+            <th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Mapped</th>
+            <th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Matched Low-level</th>
+            <th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Reason</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-G001 반복 스캐닝 기반 IP 차단 검토</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">50</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">true</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">2, 3, 4, 5</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">5</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">CRITICAL 반복 스캐닝 기준에 도달하여 WAF-G001 운영형 시나리오로 승격되었습니다.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-G002 고위험 단건 공격 검토</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">70</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">6</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">Mapped low-level scenarios did not match.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-G003 고객사 중요 필터 검토</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">65</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">7</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">Mapped low-level scenarios did not match.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-G004 공격 시퀀스 기반 검토</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">85</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">9</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">Mapped low-level scenarios did not match.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-G005 복합 공격 유형 검토</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">80</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">true</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">10</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">10</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">동일 IP 88.151.33.89에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-G006 분산 유사 공격 검토</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">90</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">11</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">Mapped low-level scenarios did not match.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-G007 외부 평판/TI 보강 검토</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">75</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">1</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">Mapped low-level scenarios did not match.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-G008 AI 분석 보강 검토</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">60</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">8</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">Mapped low-level scenarios did not match.</td>
+                  </tr>
+                
+        </tbody>
+      </table>
+      <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;">
+        <thead>
+          <tr>
+            <th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Scenario</th>
+            <th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Score</th>
+            <th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Matched</th>
+            <th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Attacker IP</th>
+            <th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">판단 근거</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-S001 VT malicious ratio</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">90</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">172.202.118.119</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">VT 분석 결과가 없어 수동차단 후보로 올리지 않습니다.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-S002 Scanning Low threshold</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">30</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">스캐닝성 LOW 이벤트가 기준 30건에 도달하지 않았습니다.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-S003 Scanning Middle threshold</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">40</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">88.151.33.89</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">스캐닝성 MIDDLE 이벤트가 기준 20건에 도달하지 않았습니다.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-S004 Scanning High threshold</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">50</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">88.151.33.89</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">스캐닝성 HIGH 이벤트가 기준 10건에 도달하지 않았습니다.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-S005 Scanning Critical threshold</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">65</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">true</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">88.151.33.89</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">동일 IP 88.151.33.89에서 스캐닝성 CRITICAL 이벤트가 7건 확인되어 기준 3건 이상입니다.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-S006 Non-scanning Critical</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">70</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">비스캐닝 CRITICAL 이벤트가 확인되지 않았습니다.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-S007 Customer custom filter</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">55</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">매칭되는 고객사 커스텀 필터 탐지가 없어 수동차단 후보로 올리지 않습니다.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-S008 AI malicious probability</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">75</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">85.208.98.29</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">AI 분석 결과가 없어 수동차단 후보로 올리지 않습니다.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-S009 Threat sequence judgment</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">80</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">88.151.33.89</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">로그 순서 기반 위협 시퀀스가 확인되지 않았습니다.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-S010 Mixed attack types by same IP</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">60</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">true</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">88.151.33.89</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">동일 IP 88.151.33.89에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.</td>
+                  </tr>
+                
+                  <tr>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">WAF-S011 Distributed similar attack burst</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">85</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">false</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">88.151.33.89</td>
+                    <td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">분산 유사 공격 기준에 도달하지 않았습니다.</td>
+                  </tr>
+                
+        </tbody>
+      </table>
+      
+    <div style="margin-top:12px;">
+      <h3 style="font-size:15px;margin:0 0 8px;color:#172033;">WAF-S005 Scanning Critical threshold</h3>
+      <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;">
+        <tbody>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">attackerIp</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">88.151.33.89</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">priorityScore</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">65</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">attackerIps</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">reason</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">동일 IP 88.151.33.89에서 스캐닝성 CRITICAL 이벤트가 7건 확인되어 기준 3건 이상입니다.</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">recommendation</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 수동차단을 검토하세요.</td></tr>
+        </tbody>
+      </table>
+      <p style="margin:8px 0;">{&quot;severity&quot;:&quot;CRITICAL&quot;,&quot;threshold&quot;:3,&quot;count&quot;:7,&quot;uniquePaths&quot;:7,&quot;samplePaths&quot;:[&quot;/.aws/credentials&quot;,&quot;/.env&quot;,&quot;/backend/.env&quot;,&quot;/api/.env&quot;,&quot;/.env.production&quot;,&quot;/.env.local&quot;,&quot;/app/.env&quot;]}</p>
+    </div>
+    <div style="margin-top:12px;">
+      <h3 style="font-size:15px;margin:0 0 8px;color:#172033;">WAF-S010 Mixed attack types by same IP</h3>
+      <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;">
+        <tbody>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">attackerIp</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">88.151.33.89</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">priorityScore</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">60</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">attackerIps</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">reason</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">동일 IP 88.151.33.89에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">recommendation</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 수동차단을 검토하세요.</td></tr>
+        </tbody>
+      </table>
+      <p style="margin:8px 0;">{&quot;threshold&quot;:2,&quot;totalEvents&quot;:9,&quot;distinctAttackTypes&quot;:4,&quot;attackTypes&quot;:[&quot;BROKEN ACCESS CONTROL&quot;,&quot;SCANNER&quot;,&quot;SECURITY MISCONFIGURATION&quot;,&quot;LFI&quot;],&quot;severities&quot;:[&quot;CRITICAL&quot;,&quot;HIGH&quot;,&quot;MIDDLE&quot;],&quot;uniquePaths&quot;:9,&quot;samplePaths&quot;:[&quot;/.aws/credentials&quot;,&quot;/.env&quot;,&quot;/backend/.env&quot;,&quot;/secrets.json&quot;,&quot;/credentials.json&quot;,&quot;/api/.env&quot;,&quot;/.env.production&quot;,&quot;/.env.local&quot;]}</p>
+    </div>
+      <p style="margin:10px 0 0;">최종 IP 차단 검토 사유: WAF-S005 동일 IP 88.151.33.89에서 스캐닝성 CRITICAL 이벤트가 7건 확인되어 기준 3건 이상입니다. / WAF-S010 동일 IP 88.151.33.89에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다. 자동 IP 차단은 수행하지 않으며 담당자가 웹 화면에서 수동 확인 후 결정합니다.</p>
+    </div>
+    <div style="margin-top:20px;">
+      <h2 style="font-size:18px;margin:0 0 10px;color:#172033;">반복 요청 경로</h2>
+      <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;">
+        <thead><tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;">Path</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">/manager/html</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div style="margin-top:20px;">
+      <h2 style="font-size:18px;margin:0 0 10px;color:#172033;">우선순위 차단 이벤트</h2>
+      <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;">
+        <tbody>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">공격자 IP</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">172.202.118.119</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">대상 도메인</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">130.162.156.89</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">요청 Method</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">GET</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">URI/path</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">/manager/html</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">쿼리/요청본문</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">-</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">HTTP 상태값</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">406</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">탐지/차단 유형</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">차단(OWASP)</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">WAF 필터명</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">웹 콘솔 관리 접근취약점 스캐너 UA</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">위험도/risk</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">BROKEN ACCESS CONTROL&gt;CRITICALSCANNER&gt;HIGH</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">탐지 시각</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">2026-05-01 16:29:55.788</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">분석 탭 수집</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">true</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">로그 탭 수집</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">true</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:20px;">
+      <h2 style="font-size:18px;margin:0 0 10px;color:#172033;">원본 로그 주요 필드</h2>
+      <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;">
+        <tbody>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">method</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">GET</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">uri</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">/manager/html</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">host</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">130.162.156.89</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">remoteIp</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">172.202.118.119</td></tr>
+          <tr><th style="padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;">responseStatus</th><td style="padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;">406</td></tr>
+          
+          
+          
+          
+        </tbody>
+      </table>
+    </div>
+    <div style="background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;margin-top:16px;">
+      <h2 style="font-size:18px;margin:0 0 10px;color:#172033;">담당자 확인 항목</h2>
+      <ol style="margin:0 0 0 18px;padding:0;">
+        <li style="margin:0 0 6px;">공격자 IP 172.202.118.119의 동일 시간대 반복 요청 전체 확인</li><li style="margin:0 0 6px;">반복 경로가 PHP/WordPress 백도어/관리자 경로 스캔인지 확인</li><li style="margin:0 0 6px;">차단(OWASP)와 HTTP 406이 정상 차단 정책과 일치하는지 확인</li><li style="margin:0 0 6px;">동일 IP의 후속 요청이 계속 발생하는지 확인</li><li style="margin:0 0 6px;">웹 UI에서 IP주소 차단 등록 여부 결정</li>
+      </ol>
+    </div>
+    <div style="background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;margin-top:16px;">
+      <h2 style="font-size:18px;margin:0 0 10px;color:#172033;">발송 판단</h2>
+      <p style="margin:0;">단건 차단 또는 반복성 부족으로 메일 발송 우선순위를 낮게 판단했습니다.</p>
+    </div>
+  </div>
+</body>
+</html>
