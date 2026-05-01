@@ -1,0 +1,17 @@
+{
+  "tenantId": "abcdEFGH",
+  "reportType": "waf",
+  "reportDate": "2026-05-01",
+  "runId": "plura-waf-20260501T043601Z",
+  "publishedAt": "2026-05-01T13:36:29+09:00",
+  "sourceRepo": "quark",
+  "representativeGroupScenario": "",
+  "matchedGroupScenarios": [],
+  "matchedScenarios": [
+    10
+  ],
+  "attackerIp": "51.161.37.213",
+  "totalEvents": 1,
+  "mailSent": false,
+  "autoBlockExecuted": false
+}
