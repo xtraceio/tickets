@@ -3,7 +3,7 @@
   "reportType": "waf",
   "reportDate": "2026-05-01",
   "runId": "plura-waf-20260501T031612Z",
-  "publishedAt": "2026-05-01T12:35:33+09:00",
+  "publishedAt": "2026-05-01T12:54:35+09:00",
   "sourceRepo": "quark",
   "representativeGroupScenario": "WAF-G005",
   "matchedGroupScenarios": [
