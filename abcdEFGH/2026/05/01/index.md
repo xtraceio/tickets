@@ -6,3 +6,4 @@
 | 13:36:38 | plura-waf-20260501T043601Z | - | 51.161.37.213 | 1 | false | runs/plura-waf-20260501T043601Z |
 | 15:21:05 | plura-waf-20260501T061517Z | - | 51.161.37.213 | 3 | false | runs/plura-waf-20260501T061517Z |
 | 17:10:04 | plura-waf-20260501T080556Z | WAF-G005 | 88.151.33.89 | 1 | false | runs/plura-waf-20260501T080556Z |
+| 20:48:45 | plura-waf-20260501T114756Z | WAF-G003 | 85.208.96.194 | 1 | false | runs/plura-waf-20260501T114756Z |
