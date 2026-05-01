@@ -1,0 +1,2517 @@
+{
+  "runId": "plura-waf-20260501T061517Z",
+  "mode": "detail-tab-collect",
+  "filters": {
+    "datePreset": "today",
+    "risk": "preview",
+    "blockStatus": "all",
+    "applied": false,
+    "reason": "Preview mode does not log in to PLURA-XDR or apply live WAF filters."
+  },
+  "summary": {
+    "totalRows": 20,
+    "blockedRows": 2,
+    "detectedRows": 1,
+    "uniqueAttackers": 1,
+    "uniqueUrls": 1,
+    "message": "WAF 우선순위 이벤트 상세 수집이 완료되어 보고서 생성이 가능합니다.",
+    "topSignals": [
+      "blocked priority event",
+      "SCANNER>CRITICAL",
+      "/",
+      "78.153.140.93"
+    ],
+    "repeatedAttacker": {
+      "attackerIp": "78.153.140.93",
+      "totalEvents": 3,
+      "blockedEvents": 2,
+      "detectedEvents": 1,
+      "uniquePaths": 3,
+      "paths": [
+        "/ 0x%5B%5D=androxgh0st",
+        "/.env",
+        "/"
+      ],
+      "hasCriticalOrWebShell": true,
+      "hasPhpOrWordPressScan": true
+    },
+    "scenarioSelection": {
+      "raw": "1-10",
+      "selectedIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "explicit": true
+    },
+    "scenarioResults": [
+      {
+        "scenarioId": 1,
+        "code": "WAF-S001",
+        "title": "VT malicious ratio",
+        "priorityScore": 90,
+        "matched": false,
+        "notImplemented": false,
+        "attackerIp": "78.153.140.93",
+        "evidence": {
+          "threshold": 0.05,
+          "noMatchReason": "VT 분석 결과 없음"
+        },
+        "recommendation": {
+          "manualBlockCandidate": false,
+          "ipBlockCandidate": false,
+          "autoBlock": false,
+          "manualGuidance": false,
+          "reason": "VT 분석 결과가 없어 수동차단 후보로 올리지 않습니다.",
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+          "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+        }
+      },
+      {
+        "scenarioId": 2,
+        "code": "WAF-S002",
+        "title": "Scanning Low threshold",
+        "priorityScore": 30,
+        "matched": false,
+        "notImplemented": false,
+        "attackerIp": "",
+        "evidence": {
+          "severity": "LOW",
+          "threshold": 30,
+          "count": 0,
+          "uniquePaths": 0,
+          "samplePaths": []
+        },
+        "recommendation": {
+          "manualBlockCandidate": false,
+          "ipBlockCandidate": false,
+          "autoBlock": false,
+          "manualGuidance": false,
+          "reason": "스캐닝성 LOW 이벤트가 기준 30건에 도달하지 않았습니다.",
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+          "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+        }
+      },
+      {
+        "scenarioId": 3,
+        "code": "WAF-S003",
+        "title": "Scanning Middle threshold",
+        "priorityScore": 40,
+        "matched": false,
+        "notImplemented": false,
+        "attackerIp": "172.212.217.10",
+        "evidence": {
+          "severity": "MIDDLE",
+          "threshold": 20,
+          "count": 11,
+          "uniquePaths": 11,
+          "samplePaths": [
+            "/yindu.php",
+            "/debug-php.php",
+            "/conf.php",
+            "/php-fpm.php",
+            "/.env.test.php",
+            "/oauth.php",
+            "/u.php",
+            "/000.php"
+          ]
+        },
+        "recommendation": {
+          "manualBlockCandidate": false,
+          "ipBlockCandidate": false,
+          "autoBlock": false,
+          "manualGuidance": false,
+          "reason": "스캐닝성 MIDDLE 이벤트가 기준 20건에 도달하지 않았습니다.",
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+          "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+        }
+      },
+      {
+        "scenarioId": 4,
+        "code": "WAF-S004",
+        "title": "Scanning High threshold",
+        "priorityScore": 50,
+        "matched": false,
+        "notImplemented": false,
+        "attackerIp": "185.191.171.8",
+        "evidence": {
+          "severity": "HIGH",
+          "threshold": 10,
+          "count": 1,
+          "uniquePaths": 1,
+          "samplePaths": [
+            "/ko/threats/powershell-attack-techniques/"
+          ]
+        },
+        "recommendation": {
+          "manualBlockCandidate": false,
+          "ipBlockCandidate": false,
+          "autoBlock": false,
+          "manualGuidance": false,
+          "reason": "스캐닝성 HIGH 이벤트가 기준 10건에 도달하지 않았습니다.",
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+          "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+        }
+      },
+      {
+        "scenarioId": 5,
+        "code": "WAF-S005",
+        "title": "Scanning Critical threshold",
+        "priorityScore": 65,
+        "matched": false,
+        "notImplemented": false,
+        "attackerIp": "185.191.171.8",
+        "evidence": {
+          "severity": "CRITICAL",
+          "threshold": 3,
+          "count": 1,
+          "uniquePaths": 1,
+          "samplePaths": [
+            "/ko/threats/powershell-attack-techniques/"
+          ]
+        },
+        "recommendation": {
+          "manualBlockCandidate": false,
+          "ipBlockCandidate": false,
+          "autoBlock": false,
+          "manualGuidance": false,
+          "reason": "스캐닝성 CRITICAL 이벤트가 기준 3건에 도달하지 않았습니다.",
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+          "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+        }
+      },
+      {
+        "scenarioId": 6,
+        "code": "WAF-S006",
+        "title": "Non-scanning Critical",
+        "priorityScore": 70,
+        "matched": false,
+        "notImplemented": false,
+        "attackerIp": "",
+        "evidence": {
+          "criticalEvents": 3,
+          "scanningEvents": 3,
+          "matchedRisk": "",
+          "samplePath": ""
+        },
+        "recommendation": {
+          "manualBlockCandidate": false,
+          "ipBlockCandidate": false,
+          "autoBlock": false,
+          "manualGuidance": false,
+          "reason": "비스캐닝 CRITICAL 이벤트가 확인되지 않았습니다.",
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+          "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+        }
+      },
+      {
+        "scenarioId": 7,
+        "code": "WAF-S007",
+        "title": "Customer custom filter",
+        "priorityScore": 55,
+        "matched": false,
+        "notImplemented": false,
+        "attackerIp": "",
+        "evidence": {
+          "configFile": "config/scenarios/waf.custom-filters.json",
+          "configuredRules": 2,
+          "customers": [
+            "WAF-Blog"
+          ],
+          "noMatchReason": "매칭되는 고객사 커스텀 필터 없음"
+        },
+        "recommendation": {
+          "manualBlockCandidate": false,
+          "ipBlockCandidate": false,
+          "autoBlock": false,
+          "manualGuidance": false,
+          "reason": "매칭되는 고객사 커스텀 필터 탐지가 없어 수동차단 후보로 올리지 않습니다.",
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+          "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+        }
+      },
+      {
+        "scenarioId": 8,
+        "code": "WAF-S008",
+        "title": "AI malicious probability",
+        "priorityScore": 75,
+        "matched": false,
+        "notImplemented": false,
+        "attackerIp": "185.191.171.8",
+        "evidence": {
+          "threshold": 0.7,
+          "noMatchReason": "AI 분석 결과 없음"
+        },
+        "recommendation": {
+          "manualBlockCandidate": false,
+          "ipBlockCandidate": false,
+          "autoBlock": false,
+          "manualGuidance": false,
+          "reason": "AI 분석 결과가 없어 수동차단 후보로 올리지 않습니다.",
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+          "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+        }
+      },
+      {
+        "scenarioId": 9,
+        "code": "WAF-S009",
+        "title": "Threat sequence judgment",
+        "priorityScore": 80,
+        "matched": false,
+        "notImplemented": false,
+        "attackerIp": "172.212.217.10",
+        "evidence": {
+          "timeWindowMinutes": 30,
+          "phaseStatus": {
+            "probeFound": true,
+            "adminAccessFound": false,
+            "exploitPayloadFound": true,
+            "orderedSequenceFound": false
+          },
+          "noMatchReason": "admin-access phase 없음 또는 probe → admin → exploit 순서가 완성되지 않음"
+        },
+        "recommendation": {
+          "manualBlockCandidate": false,
+          "ipBlockCandidate": false,
+          "autoBlock": false,
+          "manualGuidance": false,
+          "reason": "로그 순서 기반 위협 시퀀스가 확인되지 않았습니다.",
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+          "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+        }
+      },
+      {
+        "scenarioId": 10,
+        "code": "WAF-S010",
+        "title": "Mixed attack types by same IP",
+        "priorityScore": 60,
+        "matched": true,
+        "notImplemented": false,
+        "attackerIp": "51.161.37.213",
+        "evidence": {
+          "threshold": 2,
+          "totalEvents": 1,
+          "distinctAttackTypes": 3,
+          "attackTypes": [
+            "SCANNER",
+            "FILE UPLOAD",
+            "RCE"
+          ],
+          "severities": [
+            "CRITICAL",
+            "HIGH",
+            "MIDDLE"
+          ],
+          "uniquePaths": 1,
+          "samplePaths": [
+            "/응용프로그램-로깅과-분석/"
+          ]
+        },
+        "recommendation": {
+          "manualBlockCandidate": true,
+          "ipBlockCandidate": true,
+          "autoBlock": false,
+          "manualGuidance": true,
+          "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+          "action": "웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 수동차단을 검토하세요.",
+          "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+        }
+      }
+    ],
+    "scenarioSummary": {
+      "selection": {
+        "raw": "1-10",
+        "selectedIds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "explicit": true
+      },
+      "evaluatedCount": 10,
+      "matchedScenarios": [
+        10
+      ],
+      "matchedCount": 1,
+      "representativeScenario": {
+        "scenarioId": 10,
+        "code": "WAF-S010",
+        "name": "Mixed attack types by same IP",
+        "priorityScore": 60,
+        "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+        "attackerIp": "51.161.37.213"
+      },
+      "groupScenarioResults": [
+        {
+          "id": "G001",
+          "code": "WAF-G001",
+          "name": "반복 스캐닝 기반 IP 차단 검토",
+          "description": "동일 IP의 severity별 반복 스캐닝 탐지를 운영형 판단으로 묶습니다.",
+          "matched": false,
+          "mappedScenarioIds": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "matchedScenarioIds": [],
+          "priorityScore": 50,
+          "manualGuidance": true,
+          "gmailEligible": true,
+          "autoEligible": false,
+          "evidence": {
+            "representativeLowLevelScenario": "",
+            "matchedLowLevelScenarios": [],
+            "reason": "Mapped low-level scenarios did not match."
+          }
+        },
+        {
+          "id": "G002",
+          "code": "WAF-G002",
+          "name": "고위험 단건 공격 검토",
+          "description": "비스캐닝 Critical 단건 공격을 운영형 고위험 이벤트로 검토합니다.",
+          "matched": false,
+          "mappedScenarioIds": [
+            6
+          ],
+          "matchedScenarioIds": [],
+          "priorityScore": 70,
+          "manualGuidance": true,
+          "gmailEligible": true,
+          "autoEligible": false,
+          "evidence": {
+            "representativeLowLevelScenario": "",
+            "matchedLowLevelScenarios": [],
+            "reason": "Mapped low-level scenarios did not match."
+          }
+        },
+        {
+          "id": "G003",
+          "code": "WAF-G003",
+          "name": "고객사 중요 필터 검토",
+          "description": "고객사 또는 그룹별 중요 커스텀 필터 매칭을 운영형 판단으로 묶습니다.",
+          "matched": false,
+          "mappedScenarioIds": [
+            7
+          ],
+          "matchedScenarioIds": [],
+          "priorityScore": 65,
+          "manualGuidance": true,
+          "gmailEligible": true,
+          "autoEligible": false,
+          "evidence": {
+            "representativeLowLevelScenario": "",
+            "matchedLowLevelScenarios": [],
+            "reason": "Mapped low-level scenarios did not match."
+          }
+        },
+        {
+          "id": "G004",
+          "code": "WAF-G004",
+          "name": "공격 시퀀스 기반 검토",
+          "description": "탐색, 관리자 접근, exploit payload 흐름을 운영형 sequence 판단으로 묶습니다.",
+          "matched": false,
+          "mappedScenarioIds": [
+            9
+          ],
+          "matchedScenarioIds": [],
+          "priorityScore": 85,
+          "manualGuidance": true,
+          "gmailEligible": true,
+          "autoEligible": false,
+          "evidence": {
+            "representativeLowLevelScenario": "",
+            "matchedLowLevelScenarios": [],
+            "reason": "Mapped low-level scenarios did not match."
+          }
+        },
+        {
+          "id": "G005",
+          "code": "WAF-G005",
+          "name": "복합 공격 유형 검토",
+          "description": "동일 IP의 복수 공격 유형 또는 복수 위험도 혼합을 운영형 판단으로 묶습니다.",
+          "matched": false,
+          "mappedScenarioIds": [
+            10
+          ],
+          "matchedScenarioIds": [],
+          "priorityScore": 80,
+          "manualGuidance": true,
+          "gmailEligible": true,
+          "autoEligible": false,
+          "evidence": {
+            "representativeLowLevelScenario": "WAF-S010",
+            "matchedLowLevelScenarios": [
+              "WAF-S010"
+            ],
+            "reason": "복수 공격 유형은 확인되었으나 동일 IP 이벤트 수가 2건 미만이므로 운영형 WAF-G005 조건에는 도달하지 않았습니다.",
+            "noMatchReason": "복수 공격 유형은 확인되었으나 동일 IP 이벤트 수가 2건 미만이므로 운영형 WAF-G005 조건에는 도달하지 않았습니다.",
+            "lowLevelMatched": true,
+            "distinctAttackTypes": 3,
+            "totalEvents": 1,
+            "uniquePaths": 1
+          }
+        },
+        {
+          "id": "G006",
+          "code": "WAF-G006",
+          "name": "분산 유사 공격 검토",
+          "description": "짧은 시간 안에 여러 IP에서 발생한 유사 공격을 운영형 분산 공격 판단으로 묶습니다.",
+          "matched": false,
+          "mappedScenarioIds": [
+            11
+          ],
+          "matchedScenarioIds": [],
+          "priorityScore": 90,
+          "manualGuidance": true,
+          "gmailEligible": true,
+          "autoEligible": false,
+          "evidence": {
+            "representativeLowLevelScenario": "",
+            "matchedLowLevelScenarios": [],
+            "reason": "Mapped low-level scenarios did not match."
+          }
+        },
+        {
+          "id": "G007",
+          "code": "WAF-G007",
+          "name": "외부 평판/TI 보강 검토",
+          "description": "VT/TI 외부 평판 결과를 운영형 보강 근거로 묶습니다.",
+          "matched": false,
+          "mappedScenarioIds": [
+            1
+          ],
+          "matchedScenarioIds": [],
+          "priorityScore": 75,
+          "manualGuidance": true,
+          "gmailEligible": false,
+          "autoEligible": false,
+          "evidence": {
+            "representativeLowLevelScenario": "",
+            "matchedLowLevelScenarios": [],
+            "reason": "Mapped low-level scenarios did not match."
+          }
+        },
+        {
+          "id": "G008",
+          "code": "WAF-G008",
+          "name": "AI 분석 보강 검토",
+          "description": "AI 또는 rule-based 악성 확률 판단을 운영형 보강 근거로 묶습니다.",
+          "matched": false,
+          "mappedScenarioIds": [
+            8
+          ],
+          "matchedScenarioIds": [],
+          "priorityScore": 60,
+          "manualGuidance": true,
+          "gmailEligible": false,
+          "autoEligible": false,
+          "evidence": {
+            "representativeLowLevelScenario": "",
+            "matchedLowLevelScenarios": [],
+            "reason": "Mapped low-level scenarios did not match."
+          }
+        }
+      ],
+      "matchedGroupScenarios": [],
+      "representativeGroupScenario": null,
+      "finalIpBlockCandidate": true,
+      "fallbackApplied": false,
+      "fallbackReason": "일반 반복 IP fallback은 scenario 선택 실행에서는 적용하지 않았습니다.",
+      "suppression": {
+        "suppressed": false,
+        "reason": "",
+        "matchedRuleId": "",
+        "matchedValue": "",
+        "action": ""
+      },
+      "autoBlock": false,
+      "matched": [
+        {
+          "scenarioId": 10,
+          "code": "WAF-S010",
+          "name": "Mixed attack types by same IP",
+          "priorityScore": 60,
+          "matched": true,
+          "attackerIp": "51.161.37.213",
+          "attackerIps": [],
+          "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+          "recommendation": {
+            "ipBlockCandidate": true,
+            "manualGuidance": true,
+            "autoBlock": false,
+            "action": "웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 수동차단을 검토하세요."
+          },
+          "evidence": {
+            "threshold": 2,
+            "totalEvents": 1,
+            "distinctAttackTypes": 3,
+            "attackTypes": [
+              "SCANNER",
+              "FILE UPLOAD",
+              "RCE"
+            ],
+            "severities": [
+              "CRITICAL",
+              "HIGH",
+              "MIDDLE"
+            ],
+            "uniquePaths": 1,
+            "samplePaths": [
+              "/응용프로그램-로깅과-분석/"
+            ]
+          }
+        }
+      ],
+      "noMatchHighlights": [
+        {
+          "scenarioId": 1,
+          "code": "WAF-S001",
+          "name": "VT malicious ratio",
+          "priorityScore": 90,
+          "matched": false,
+          "attackerIp": "78.153.140.93",
+          "attackerIps": [],
+          "reason": "VT 분석 결과가 없어 수동차단 후보로 올리지 않습니다.",
+          "recommendation": {
+            "ipBlockCandidate": false,
+            "manualGuidance": false,
+            "autoBlock": false,
+            "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+          },
+          "evidence": {
+            "threshold": 0.05,
+            "noMatchReason": "VT 분석 결과 없음"
+          }
+        },
+        {
+          "scenarioId": 2,
+          "code": "WAF-S002",
+          "name": "Scanning Low threshold",
+          "priorityScore": 30,
+          "matched": false,
+          "attackerIp": "",
+          "attackerIps": [],
+          "reason": "스캐닝성 LOW 이벤트가 기준 30건에 도달하지 않았습니다.",
+          "recommendation": {
+            "ipBlockCandidate": false,
+            "manualGuidance": false,
+            "autoBlock": false,
+            "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+          },
+          "evidence": {
+            "severity": "LOW",
+            "threshold": 30,
+            "count": 0,
+            "uniquePaths": 0,
+            "samplePaths": []
+          }
+        },
+        {
+          "scenarioId": 3,
+          "code": "WAF-S003",
+          "name": "Scanning Middle threshold",
+          "priorityScore": 40,
+          "matched": false,
+          "attackerIp": "172.212.217.10",
+          "attackerIps": [],
+          "reason": "스캐닝성 MIDDLE 이벤트가 기준 20건에 도달하지 않았습니다.",
+          "recommendation": {
+            "ipBlockCandidate": false,
+            "manualGuidance": false,
+            "autoBlock": false,
+            "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+          },
+          "evidence": {
+            "severity": "MIDDLE",
+            "threshold": 20,
+            "count": 11,
+            "uniquePaths": 11,
+            "samplePaths": [
+              "/yindu.php",
+              "/debug-php.php",
+              "/conf.php",
+              "/php-fpm.php",
+              "/.env.test.php",
+              "/oauth.php",
+              "/u.php",
+              "/000.php"
+            ]
+          }
+        },
+        {
+          "scenarioId": 4,
+          "code": "WAF-S004",
+          "name": "Scanning High threshold",
+          "priorityScore": 50,
+          "matched": false,
+          "attackerIp": "185.191.171.8",
+          "attackerIps": [],
+          "reason": "스캐닝성 HIGH 이벤트가 기준 10건에 도달하지 않았습니다.",
+          "recommendation": {
+            "ipBlockCandidate": false,
+            "manualGuidance": false,
+            "autoBlock": false,
+            "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+          },
+          "evidence": {
+            "severity": "HIGH",
+            "threshold": 10,
+            "count": 1,
+            "uniquePaths": 1,
+            "samplePaths": [
+              "/ko/threats/powershell-attack-techniques/"
+            ]
+          }
+        },
+        {
+          "scenarioId": 5,
+          "code": "WAF-S005",
+          "name": "Scanning Critical threshold",
+          "priorityScore": 65,
+          "matched": false,
+          "attackerIp": "185.191.171.8",
+          "attackerIps": [],
+          "reason": "스캐닝성 CRITICAL 이벤트가 기준 3건에 도달하지 않았습니다.",
+          "recommendation": {
+            "ipBlockCandidate": false,
+            "manualGuidance": false,
+            "autoBlock": false,
+            "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+          },
+          "evidence": {
+            "severity": "CRITICAL",
+            "threshold": 3,
+            "count": 1,
+            "uniquePaths": 1,
+            "samplePaths": [
+              "/ko/threats/powershell-attack-techniques/"
+            ]
+          }
+        },
+        {
+          "scenarioId": 6,
+          "code": "WAF-S006",
+          "name": "Non-scanning Critical",
+          "priorityScore": 70,
+          "matched": false,
+          "attackerIp": "",
+          "attackerIps": [],
+          "reason": "비스캐닝 CRITICAL 이벤트가 확인되지 않았습니다.",
+          "recommendation": {
+            "ipBlockCandidate": false,
+            "manualGuidance": false,
+            "autoBlock": false,
+            "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+          },
+          "evidence": {
+            "criticalEvents": 3,
+            "scanningEvents": 3,
+            "matchedRisk": "",
+            "samplePath": ""
+          }
+        },
+        {
+          "scenarioId": 7,
+          "code": "WAF-S007",
+          "name": "Customer custom filter",
+          "priorityScore": 55,
+          "matched": false,
+          "attackerIp": "",
+          "attackerIps": [],
+          "reason": "매칭되는 고객사 커스텀 필터 탐지가 없어 수동차단 후보로 올리지 않습니다.",
+          "recommendation": {
+            "ipBlockCandidate": false,
+            "manualGuidance": false,
+            "autoBlock": false,
+            "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+          },
+          "evidence": {
+            "configFile": "config/scenarios/waf.custom-filters.json",
+            "configuredRules": 2,
+            "customers": [
+              "WAF-Blog"
+            ],
+            "noMatchReason": "매칭되는 고객사 커스텀 필터 없음"
+          }
+        },
+        {
+          "scenarioId": 8,
+          "code": "WAF-S008",
+          "name": "AI malicious probability",
+          "priorityScore": 75,
+          "matched": false,
+          "attackerIp": "185.191.171.8",
+          "attackerIps": [],
+          "reason": "AI 분석 결과가 없어 수동차단 후보로 올리지 않습니다.",
+          "recommendation": {
+            "ipBlockCandidate": false,
+            "manualGuidance": false,
+            "autoBlock": false,
+            "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+          },
+          "evidence": {
+            "threshold": 0.7,
+            "noMatchReason": "AI 분석 결과 없음"
+          }
+        },
+        {
+          "scenarioId": 9,
+          "code": "WAF-S009",
+          "name": "Threat sequence judgment",
+          "priorityScore": 80,
+          "matched": false,
+          "attackerIp": "172.212.217.10",
+          "attackerIps": [],
+          "reason": "로그 순서 기반 위협 시퀀스가 확인되지 않았습니다.",
+          "recommendation": {
+            "ipBlockCandidate": false,
+            "manualGuidance": false,
+            "autoBlock": false,
+            "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+          },
+          "evidence": {
+            "timeWindowMinutes": 30,
+            "phaseStatus": {
+              "probeFound": true,
+              "adminAccessFound": false,
+              "exploitPayloadFound": true,
+              "orderedSequenceFound": false
+            },
+            "noMatchReason": "admin-access phase 없음 또는 probe → admin → exploit 순서가 완성되지 않음"
+          }
+        }
+      ]
+    },
+    "matchedScenarios": [
+      10
+    ],
+    "representativeScenario": {
+      "scenarioId": 10,
+      "code": "WAF-S010",
+      "name": "Mixed attack types by same IP",
+      "priorityScore": 60,
+      "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+      "attackerIp": "51.161.37.213"
+    },
+    "groupScenarioResults": [
+      {
+        "id": "G001",
+        "code": "WAF-G001",
+        "name": "반복 스캐닝 기반 IP 차단 검토",
+        "description": "동일 IP의 severity별 반복 스캐닝 탐지를 운영형 판단으로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 50,
+        "manualGuidance": true,
+        "gmailEligible": true,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      },
+      {
+        "id": "G002",
+        "code": "WAF-G002",
+        "name": "고위험 단건 공격 검토",
+        "description": "비스캐닝 Critical 단건 공격을 운영형 고위험 이벤트로 검토합니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          6
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 70,
+        "manualGuidance": true,
+        "gmailEligible": true,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      },
+      {
+        "id": "G003",
+        "code": "WAF-G003",
+        "name": "고객사 중요 필터 검토",
+        "description": "고객사 또는 그룹별 중요 커스텀 필터 매칭을 운영형 판단으로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          7
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 65,
+        "manualGuidance": true,
+        "gmailEligible": true,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      },
+      {
+        "id": "G004",
+        "code": "WAF-G004",
+        "name": "공격 시퀀스 기반 검토",
+        "description": "탐색, 관리자 접근, exploit payload 흐름을 운영형 sequence 판단으로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          9
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 85,
+        "manualGuidance": true,
+        "gmailEligible": true,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      },
+      {
+        "id": "G005",
+        "code": "WAF-G005",
+        "name": "복합 공격 유형 검토",
+        "description": "동일 IP의 복수 공격 유형 또는 복수 위험도 혼합을 운영형 판단으로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          10
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 80,
+        "manualGuidance": true,
+        "gmailEligible": true,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "WAF-S010",
+          "matchedLowLevelScenarios": [
+            "WAF-S010"
+          ],
+          "reason": "복수 공격 유형은 확인되었으나 동일 IP 이벤트 수가 2건 미만이므로 운영형 WAF-G005 조건에는 도달하지 않았습니다.",
+          "noMatchReason": "복수 공격 유형은 확인되었으나 동일 IP 이벤트 수가 2건 미만이므로 운영형 WAF-G005 조건에는 도달하지 않았습니다.",
+          "lowLevelMatched": true,
+          "distinctAttackTypes": 3,
+          "totalEvents": 1,
+          "uniquePaths": 1
+        }
+      },
+      {
+        "id": "G006",
+        "code": "WAF-G006",
+        "name": "분산 유사 공격 검토",
+        "description": "짧은 시간 안에 여러 IP에서 발생한 유사 공격을 운영형 분산 공격 판단으로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          11
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 90,
+        "manualGuidance": true,
+        "gmailEligible": true,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      },
+      {
+        "id": "G007",
+        "code": "WAF-G007",
+        "name": "외부 평판/TI 보강 검토",
+        "description": "VT/TI 외부 평판 결과를 운영형 보강 근거로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          1
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 75,
+        "manualGuidance": true,
+        "gmailEligible": false,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      },
+      {
+        "id": "G008",
+        "code": "WAF-G008",
+        "name": "AI 분석 보강 검토",
+        "description": "AI 또는 rule-based 악성 확률 판단을 운영형 보강 근거로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          8
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 60,
+        "manualGuidance": true,
+        "gmailEligible": false,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      }
+    ],
+    "matchedGroupScenarios": [],
+    "representativeGroupScenario": null,
+    "suppression": {
+      "suppressed": false,
+      "reason": "",
+      "matchedRuleId": "",
+      "matchedValue": "",
+      "action": ""
+    },
+    "ipBlockRecommendation": {
+      "candidate": true,
+      "attackerIp": "51.161.37.213",
+      "totalEvents": 3,
+      "blockedEvents": 2,
+      "detectedEvents": 1,
+      "uniquePaths": 3,
+      "reason": "대표 시나리오 WAF-S010 Mixed attack types by same IP 매칭: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+      "recommendedAction": "웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 차단을 검토하세요.",
+      "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual",
+      "autoBlock": false,
+      "matchedScenarios": [
+        10
+      ],
+      "representativeScenario": {
+        "scenarioId": 10,
+        "code": "WAF-S010",
+        "name": "Mixed attack types by same IP",
+        "priorityScore": 60,
+        "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+        "attackerIp": "51.161.37.213"
+      },
+      "matchedGroupScenarios": [],
+      "representativeGroupScenario": null
+    },
+    "manualBlockGuidance": {
+      "enabled": true,
+      "autoBlock": false,
+      "attackerIp": "51.161.37.213",
+      "message": "공격자 IP 51.161.37.213에서 총 1개 정탐이 탐지되어 IP주소 차단 검토가 필요합니다. 대표 판단: WAF-S010 Mixed attack types by same IP. 매칭 시나리오: WAF-S010.",
+      "uiAction": "하단 수동차단 버튼을 선택해 웹 화면에서 확인 후 차단하세요.",
+      "stopAfterGuidance": true,
+      "clickedManualBlock": false,
+      "clickedSaveOrConfirm": false,
+      "overlayShown": true,
+      "overlayType": "in-browser-guidance",
+      "overlayTitle": "IP 차단 검토 필요",
+      "manualBlockButtonLocated": false,
+      "manualBlockButtonSelector": "",
+      "matchedScenarios": [
+        10
+      ],
+      "representativeScenario": {
+        "scenarioId": 10,
+        "code": "WAF-S010",
+        "name": "Mixed attack types by same IP",
+        "priorityScore": 60,
+        "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+        "attackerIp": "51.161.37.213"
+      },
+      "suppression": {
+        "suppressed": false,
+        "reason": "",
+        "matchedRuleId": "",
+        "matchedValue": "",
+        "action": ""
+      },
+      "scenarioSummary": "WAF-S010: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": 10,
+          "code": "WAF-S010",
+          "title": "Mixed attack types by same IP",
+          "priorityScore": 60,
+          "attackerIp": "51.161.37.213",
+          "attackerIps": [],
+          "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+          "evidence": {
+            "threshold": 2,
+            "totalEvents": 1,
+            "distinctAttackTypes": 3,
+            "attackTypes": [
+              "SCANNER",
+              "FILE UPLOAD",
+              "RCE"
+            ],
+            "severities": [
+              "CRITICAL",
+              "HIGH",
+              "MIDDLE"
+            ],
+            "uniquePaths": 1,
+            "samplePaths": [
+              "/응용프로그램-로깅과-분석/"
+            ]
+          }
+        }
+      ],
+      "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+    },
+    "manualReviewRequired": true,
+    "browserKeptOpen": false,
+    "autoBlockExecuted": false,
+    "reviewReason": "대표 시나리오 WAF-S010 Mixed attack types by same IP 매칭: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+    "reviewIp": "51.161.37.213",
+    "mailSent": false,
+    "detailTabCollect": {
+      "runStatus": "OK",
+      "mode": "detail-tab-collect",
+      "selectedDatePreset": "today",
+      "dateRange": {
+        "label": "오늘",
+        "startDate": "2026-05-01",
+        "endDate": "2026-05-01",
+        "source": "PLURA_WAF_DATE_PRESET",
+        "fallbackUsed": false,
+        "fallbackReason": ""
+      },
+      "navigation": {
+        "loginSucceeded": true,
+        "dashboardReached": true,
+        "wafMenuOpened": true,
+        "wafUrl": "https://xdr.plura.io/waf",
+        "matchedSelector": "role=link[name=/WAF|웹보안|웹방화벽/i]"
+      },
+      "rowCollect": {
+        "rowCount": 20,
+        "tableFound": true,
+        "headerCells": [
+          "번호",
+          "분류",
+          "코드",
+          "필터명",
+          "그룹",
+          "호스트",
+          "공격자",
+          "상태값",
+          "호스트(도메인)",
+          "메소드",
+          "경로",
+          "쿼리/요청본문",
+          "요청",
+          "응답",
+          "동일로그",
+          "유형",
+          "유출정보",
+          "날짜",
+          "이동"
+        ],
+        "rowsCollected": 10
+      },
+      "targetRowSelection": {
+        "strategy": "blocked-critical-first",
+        "reason": "Selected row 0 by priority policy: blocked=true; detectionType contains \"차단\" or block; risk/classification contains CRITICAL.",
+        "selectedIndex": 0
+      },
+      "targetRow": {
+        "index": 0,
+        "wafRuleName": "Androxgh0st 봇넷",
+        "attackerIp": "78.153.140.93",
+        "targetDomain": "130.162.156.89",
+        "method": "POST",
+        "path": "/",
+        "queryOrRequestBody": "0x%5B%5D=androxgh0st",
+        "httpStatusCode": "406",
+        "detectionType": "차단(OWASP)",
+        "blocked": true,
+        "blockStatus": "blocked",
+        "risk": "SCANNER>CRITICAL",
+        "repeatCount": "1",
+        "detectedAt": "2026-05-01 14:30:32.436"
+      },
+      "detailOpen": {
+        "opened": true,
+        "method": "detailAction",
+        "selector": "tbody tr td:nth-child(19) i:nth-of-type(1)",
+        "looksLikeDetailPage": true,
+        "reason": "Detail-like text and repeated first-row values were visible after the click."
+      },
+      "collection": {
+        "rawLogCollected": true,
+        "analysisTabCollected": true,
+        "logTabCollected": true,
+        "parsedFields": {
+          "method": "POST",
+          "uri": "/",
+          "host": "130.162.156.89",
+          "headers": {},
+          "body": "",
+          "cookie": "",
+          "referer": "",
+          "userAgent": "",
+          "remoteIp": "78.153.140.93",
+          "responseStatus": "406",
+          "responseBody": "",
+          "requestBody": ""
+        }
+      },
+      "safeToBuildWafReportNext": true,
+      "errors": []
+    }
+  },
+  "scenarioSelection": {
+    "raw": "1-10",
+    "selectedIds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "explicit": true
+  },
+  "scenarioResults": [
+    {
+      "scenarioId": 1,
+      "code": "WAF-S001",
+      "title": "VT malicious ratio",
+      "priorityScore": 90,
+      "matched": false,
+      "notImplemented": false,
+      "attackerIp": "78.153.140.93",
+      "evidence": {
+        "threshold": 0.05,
+        "noMatchReason": "VT 분석 결과 없음"
+      },
+      "recommendation": {
+        "manualBlockCandidate": false,
+        "ipBlockCandidate": false,
+        "autoBlock": false,
+        "manualGuidance": false,
+        "reason": "VT 분석 결과가 없어 수동차단 후보로 올리지 않습니다.",
+        "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+        "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+      }
+    },
+    {
+      "scenarioId": 2,
+      "code": "WAF-S002",
+      "title": "Scanning Low threshold",
+      "priorityScore": 30,
+      "matched": false,
+      "notImplemented": false,
+      "attackerIp": "",
+      "evidence": {
+        "severity": "LOW",
+        "threshold": 30,
+        "count": 0,
+        "uniquePaths": 0,
+        "samplePaths": []
+      },
+      "recommendation": {
+        "manualBlockCandidate": false,
+        "ipBlockCandidate": false,
+        "autoBlock": false,
+        "manualGuidance": false,
+        "reason": "스캐닝성 LOW 이벤트가 기준 30건에 도달하지 않았습니다.",
+        "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+        "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+      }
+    },
+    {
+      "scenarioId": 3,
+      "code": "WAF-S003",
+      "title": "Scanning Middle threshold",
+      "priorityScore": 40,
+      "matched": false,
+      "notImplemented": false,
+      "attackerIp": "172.212.217.10",
+      "evidence": {
+        "severity": "MIDDLE",
+        "threshold": 20,
+        "count": 11,
+        "uniquePaths": 11,
+        "samplePaths": [
+          "/yindu.php",
+          "/debug-php.php",
+          "/conf.php",
+          "/php-fpm.php",
+          "/.env.test.php",
+          "/oauth.php",
+          "/u.php",
+          "/000.php"
+        ]
+      },
+      "recommendation": {
+        "manualBlockCandidate": false,
+        "ipBlockCandidate": false,
+        "autoBlock": false,
+        "manualGuidance": false,
+        "reason": "스캐닝성 MIDDLE 이벤트가 기준 20건에 도달하지 않았습니다.",
+        "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+        "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+      }
+    },
+    {
+      "scenarioId": 4,
+      "code": "WAF-S004",
+      "title": "Scanning High threshold",
+      "priorityScore": 50,
+      "matched": false,
+      "notImplemented": false,
+      "attackerIp": "185.191.171.8",
+      "evidence": {
+        "severity": "HIGH",
+        "threshold": 10,
+        "count": 1,
+        "uniquePaths": 1,
+        "samplePaths": [
+          "/ko/threats/powershell-attack-techniques/"
+        ]
+      },
+      "recommendation": {
+        "manualBlockCandidate": false,
+        "ipBlockCandidate": false,
+        "autoBlock": false,
+        "manualGuidance": false,
+        "reason": "스캐닝성 HIGH 이벤트가 기준 10건에 도달하지 않았습니다.",
+        "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+        "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+      }
+    },
+    {
+      "scenarioId": 5,
+      "code": "WAF-S005",
+      "title": "Scanning Critical threshold",
+      "priorityScore": 65,
+      "matched": false,
+      "notImplemented": false,
+      "attackerIp": "185.191.171.8",
+      "evidence": {
+        "severity": "CRITICAL",
+        "threshold": 3,
+        "count": 1,
+        "uniquePaths": 1,
+        "samplePaths": [
+          "/ko/threats/powershell-attack-techniques/"
+        ]
+      },
+      "recommendation": {
+        "manualBlockCandidate": false,
+        "ipBlockCandidate": false,
+        "autoBlock": false,
+        "manualGuidance": false,
+        "reason": "스캐닝성 CRITICAL 이벤트가 기준 3건에 도달하지 않았습니다.",
+        "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+        "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+      }
+    },
+    {
+      "scenarioId": 6,
+      "code": "WAF-S006",
+      "title": "Non-scanning Critical",
+      "priorityScore": 70,
+      "matched": false,
+      "notImplemented": false,
+      "attackerIp": "",
+      "evidence": {
+        "criticalEvents": 3,
+        "scanningEvents": 3,
+        "matchedRisk": "",
+        "samplePath": ""
+      },
+      "recommendation": {
+        "manualBlockCandidate": false,
+        "ipBlockCandidate": false,
+        "autoBlock": false,
+        "manualGuidance": false,
+        "reason": "비스캐닝 CRITICAL 이벤트가 확인되지 않았습니다.",
+        "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+        "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+      }
+    },
+    {
+      "scenarioId": 7,
+      "code": "WAF-S007",
+      "title": "Customer custom filter",
+      "priorityScore": 55,
+      "matched": false,
+      "notImplemented": false,
+      "attackerIp": "",
+      "evidence": {
+        "configFile": "config/scenarios/waf.custom-filters.json",
+        "configuredRules": 2,
+        "customers": [
+          "WAF-Blog"
+        ],
+        "noMatchReason": "매칭되는 고객사 커스텀 필터 없음"
+      },
+      "recommendation": {
+        "manualBlockCandidate": false,
+        "ipBlockCandidate": false,
+        "autoBlock": false,
+        "manualGuidance": false,
+        "reason": "매칭되는 고객사 커스텀 필터 탐지가 없어 수동차단 후보로 올리지 않습니다.",
+        "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+        "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+      }
+    },
+    {
+      "scenarioId": 8,
+      "code": "WAF-S008",
+      "title": "AI malicious probability",
+      "priorityScore": 75,
+      "matched": false,
+      "notImplemented": false,
+      "attackerIp": "185.191.171.8",
+      "evidence": {
+        "threshold": 0.7,
+        "noMatchReason": "AI 분석 결과 없음"
+      },
+      "recommendation": {
+        "manualBlockCandidate": false,
+        "ipBlockCandidate": false,
+        "autoBlock": false,
+        "manualGuidance": false,
+        "reason": "AI 분석 결과가 없어 수동차단 후보로 올리지 않습니다.",
+        "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+        "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+      }
+    },
+    {
+      "scenarioId": 9,
+      "code": "WAF-S009",
+      "title": "Threat sequence judgment",
+      "priorityScore": 80,
+      "matched": false,
+      "notImplemented": false,
+      "attackerIp": "172.212.217.10",
+      "evidence": {
+        "timeWindowMinutes": 30,
+        "phaseStatus": {
+          "probeFound": true,
+          "adminAccessFound": false,
+          "exploitPayloadFound": true,
+          "orderedSequenceFound": false
+        },
+        "noMatchReason": "admin-access phase 없음 또는 probe → admin → exploit 순서가 완성되지 않음"
+      },
+      "recommendation": {
+        "manualBlockCandidate": false,
+        "ipBlockCandidate": false,
+        "autoBlock": false,
+        "manualGuidance": false,
+        "reason": "로그 순서 기반 위협 시퀀스가 확인되지 않았습니다.",
+        "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다.",
+        "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+      }
+    },
+    {
+      "scenarioId": 10,
+      "code": "WAF-S010",
+      "title": "Mixed attack types by same IP",
+      "priorityScore": 60,
+      "matched": true,
+      "notImplemented": false,
+      "attackerIp": "51.161.37.213",
+      "evidence": {
+        "threshold": 2,
+        "totalEvents": 1,
+        "distinctAttackTypes": 3,
+        "attackTypes": [
+          "SCANNER",
+          "FILE UPLOAD",
+          "RCE"
+        ],
+        "severities": [
+          "CRITICAL",
+          "HIGH",
+          "MIDDLE"
+        ],
+        "uniquePaths": 1,
+        "samplePaths": [
+          "/응용프로그램-로깅과-분석/"
+        ]
+      },
+      "recommendation": {
+        "manualBlockCandidate": true,
+        "ipBlockCandidate": true,
+        "autoBlock": false,
+        "manualGuidance": true,
+        "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+        "action": "웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 수동차단을 검토하세요.",
+        "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+      }
+    }
+  ],
+  "scenarioSummary": {
+    "selection": {
+      "raw": "1-10",
+      "selectedIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "explicit": true
+    },
+    "evaluatedCount": 10,
+    "matchedScenarios": [
+      10
+    ],
+    "matchedCount": 1,
+    "representativeScenario": {
+      "scenarioId": 10,
+      "code": "WAF-S010",
+      "name": "Mixed attack types by same IP",
+      "priorityScore": 60,
+      "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+      "attackerIp": "51.161.37.213"
+    },
+    "groupScenarioResults": [
+      {
+        "id": "G001",
+        "code": "WAF-G001",
+        "name": "반복 스캐닝 기반 IP 차단 검토",
+        "description": "동일 IP의 severity별 반복 스캐닝 탐지를 운영형 판단으로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 50,
+        "manualGuidance": true,
+        "gmailEligible": true,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      },
+      {
+        "id": "G002",
+        "code": "WAF-G002",
+        "name": "고위험 단건 공격 검토",
+        "description": "비스캐닝 Critical 단건 공격을 운영형 고위험 이벤트로 검토합니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          6
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 70,
+        "manualGuidance": true,
+        "gmailEligible": true,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      },
+      {
+        "id": "G003",
+        "code": "WAF-G003",
+        "name": "고객사 중요 필터 검토",
+        "description": "고객사 또는 그룹별 중요 커스텀 필터 매칭을 운영형 판단으로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          7
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 65,
+        "manualGuidance": true,
+        "gmailEligible": true,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      },
+      {
+        "id": "G004",
+        "code": "WAF-G004",
+        "name": "공격 시퀀스 기반 검토",
+        "description": "탐색, 관리자 접근, exploit payload 흐름을 운영형 sequence 판단으로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          9
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 85,
+        "manualGuidance": true,
+        "gmailEligible": true,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      },
+      {
+        "id": "G005",
+        "code": "WAF-G005",
+        "name": "복합 공격 유형 검토",
+        "description": "동일 IP의 복수 공격 유형 또는 복수 위험도 혼합을 운영형 판단으로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          10
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 80,
+        "manualGuidance": true,
+        "gmailEligible": true,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "WAF-S010",
+          "matchedLowLevelScenarios": [
+            "WAF-S010"
+          ],
+          "reason": "복수 공격 유형은 확인되었으나 동일 IP 이벤트 수가 2건 미만이므로 운영형 WAF-G005 조건에는 도달하지 않았습니다.",
+          "noMatchReason": "복수 공격 유형은 확인되었으나 동일 IP 이벤트 수가 2건 미만이므로 운영형 WAF-G005 조건에는 도달하지 않았습니다.",
+          "lowLevelMatched": true,
+          "distinctAttackTypes": 3,
+          "totalEvents": 1,
+          "uniquePaths": 1
+        }
+      },
+      {
+        "id": "G006",
+        "code": "WAF-G006",
+        "name": "분산 유사 공격 검토",
+        "description": "짧은 시간 안에 여러 IP에서 발생한 유사 공격을 운영형 분산 공격 판단으로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          11
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 90,
+        "manualGuidance": true,
+        "gmailEligible": true,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      },
+      {
+        "id": "G007",
+        "code": "WAF-G007",
+        "name": "외부 평판/TI 보강 검토",
+        "description": "VT/TI 외부 평판 결과를 운영형 보강 근거로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          1
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 75,
+        "manualGuidance": true,
+        "gmailEligible": false,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      },
+      {
+        "id": "G008",
+        "code": "WAF-G008",
+        "name": "AI 분석 보강 검토",
+        "description": "AI 또는 rule-based 악성 확률 판단을 운영형 보강 근거로 묶습니다.",
+        "matched": false,
+        "mappedScenarioIds": [
+          8
+        ],
+        "matchedScenarioIds": [],
+        "priorityScore": 60,
+        "manualGuidance": true,
+        "gmailEligible": false,
+        "autoEligible": false,
+        "evidence": {
+          "representativeLowLevelScenario": "",
+          "matchedLowLevelScenarios": [],
+          "reason": "Mapped low-level scenarios did not match."
+        }
+      }
+    ],
+    "matchedGroupScenarios": [],
+    "representativeGroupScenario": null,
+    "finalIpBlockCandidate": true,
+    "fallbackApplied": false,
+    "fallbackReason": "일반 반복 IP fallback은 scenario 선택 실행에서는 적용하지 않았습니다.",
+    "suppression": {
+      "suppressed": false,
+      "reason": "",
+      "matchedRuleId": "",
+      "matchedValue": "",
+      "action": ""
+    },
+    "autoBlock": false,
+    "matched": [
+      {
+        "scenarioId": 10,
+        "code": "WAF-S010",
+        "name": "Mixed attack types by same IP",
+        "priorityScore": 60,
+        "matched": true,
+        "attackerIp": "51.161.37.213",
+        "attackerIps": [],
+        "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+        "recommendation": {
+          "ipBlockCandidate": true,
+          "manualGuidance": true,
+          "autoBlock": false,
+          "action": "웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 수동차단을 검토하세요."
+        },
+        "evidence": {
+          "threshold": 2,
+          "totalEvents": 1,
+          "distinctAttackTypes": 3,
+          "attackTypes": [
+            "SCANNER",
+            "FILE UPLOAD",
+            "RCE"
+          ],
+          "severities": [
+            "CRITICAL",
+            "HIGH",
+            "MIDDLE"
+          ],
+          "uniquePaths": 1,
+          "samplePaths": [
+            "/응용프로그램-로깅과-분석/"
+          ]
+        }
+      }
+    ],
+    "noMatchHighlights": [
+      {
+        "scenarioId": 1,
+        "code": "WAF-S001",
+        "name": "VT malicious ratio",
+        "priorityScore": 90,
+        "matched": false,
+        "attackerIp": "78.153.140.93",
+        "attackerIps": [],
+        "reason": "VT 분석 결과가 없어 수동차단 후보로 올리지 않습니다.",
+        "recommendation": {
+          "ipBlockCandidate": false,
+          "manualGuidance": false,
+          "autoBlock": false,
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+        },
+        "evidence": {
+          "threshold": 0.05,
+          "noMatchReason": "VT 분석 결과 없음"
+        }
+      },
+      {
+        "scenarioId": 2,
+        "code": "WAF-S002",
+        "name": "Scanning Low threshold",
+        "priorityScore": 30,
+        "matched": false,
+        "attackerIp": "",
+        "attackerIps": [],
+        "reason": "스캐닝성 LOW 이벤트가 기준 30건에 도달하지 않았습니다.",
+        "recommendation": {
+          "ipBlockCandidate": false,
+          "manualGuidance": false,
+          "autoBlock": false,
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+        },
+        "evidence": {
+          "severity": "LOW",
+          "threshold": 30,
+          "count": 0,
+          "uniquePaths": 0,
+          "samplePaths": []
+        }
+      },
+      {
+        "scenarioId": 3,
+        "code": "WAF-S003",
+        "name": "Scanning Middle threshold",
+        "priorityScore": 40,
+        "matched": false,
+        "attackerIp": "172.212.217.10",
+        "attackerIps": [],
+        "reason": "스캐닝성 MIDDLE 이벤트가 기준 20건에 도달하지 않았습니다.",
+        "recommendation": {
+          "ipBlockCandidate": false,
+          "manualGuidance": false,
+          "autoBlock": false,
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+        },
+        "evidence": {
+          "severity": "MIDDLE",
+          "threshold": 20,
+          "count": 11,
+          "uniquePaths": 11,
+          "samplePaths": [
+            "/yindu.php",
+            "/debug-php.php",
+            "/conf.php",
+            "/php-fpm.php",
+            "/.env.test.php",
+            "/oauth.php",
+            "/u.php",
+            "/000.php"
+          ]
+        }
+      },
+      {
+        "scenarioId": 4,
+        "code": "WAF-S004",
+        "name": "Scanning High threshold",
+        "priorityScore": 50,
+        "matched": false,
+        "attackerIp": "185.191.171.8",
+        "attackerIps": [],
+        "reason": "스캐닝성 HIGH 이벤트가 기준 10건에 도달하지 않았습니다.",
+        "recommendation": {
+          "ipBlockCandidate": false,
+          "manualGuidance": false,
+          "autoBlock": false,
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+        },
+        "evidence": {
+          "severity": "HIGH",
+          "threshold": 10,
+          "count": 1,
+          "uniquePaths": 1,
+          "samplePaths": [
+            "/ko/threats/powershell-attack-techniques/"
+          ]
+        }
+      },
+      {
+        "scenarioId": 5,
+        "code": "WAF-S005",
+        "name": "Scanning Critical threshold",
+        "priorityScore": 65,
+        "matched": false,
+        "attackerIp": "185.191.171.8",
+        "attackerIps": [],
+        "reason": "스캐닝성 CRITICAL 이벤트가 기준 3건에 도달하지 않았습니다.",
+        "recommendation": {
+          "ipBlockCandidate": false,
+          "manualGuidance": false,
+          "autoBlock": false,
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+        },
+        "evidence": {
+          "severity": "CRITICAL",
+          "threshold": 3,
+          "count": 1,
+          "uniquePaths": 1,
+          "samplePaths": [
+            "/ko/threats/powershell-attack-techniques/"
+          ]
+        }
+      },
+      {
+        "scenarioId": 6,
+        "code": "WAF-S006",
+        "name": "Non-scanning Critical",
+        "priorityScore": 70,
+        "matched": false,
+        "attackerIp": "",
+        "attackerIps": [],
+        "reason": "비스캐닝 CRITICAL 이벤트가 확인되지 않았습니다.",
+        "recommendation": {
+          "ipBlockCandidate": false,
+          "manualGuidance": false,
+          "autoBlock": false,
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+        },
+        "evidence": {
+          "criticalEvents": 3,
+          "scanningEvents": 3,
+          "matchedRisk": "",
+          "samplePath": ""
+        }
+      },
+      {
+        "scenarioId": 7,
+        "code": "WAF-S007",
+        "name": "Customer custom filter",
+        "priorityScore": 55,
+        "matched": false,
+        "attackerIp": "",
+        "attackerIps": [],
+        "reason": "매칭되는 고객사 커스텀 필터 탐지가 없어 수동차단 후보로 올리지 않습니다.",
+        "recommendation": {
+          "ipBlockCandidate": false,
+          "manualGuidance": false,
+          "autoBlock": false,
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+        },
+        "evidence": {
+          "configFile": "config/scenarios/waf.custom-filters.json",
+          "configuredRules": 2,
+          "customers": [
+            "WAF-Blog"
+          ],
+          "noMatchReason": "매칭되는 고객사 커스텀 필터 없음"
+        }
+      },
+      {
+        "scenarioId": 8,
+        "code": "WAF-S008",
+        "name": "AI malicious probability",
+        "priorityScore": 75,
+        "matched": false,
+        "attackerIp": "185.191.171.8",
+        "attackerIps": [],
+        "reason": "AI 분석 결과가 없어 수동차단 후보로 올리지 않습니다.",
+        "recommendation": {
+          "ipBlockCandidate": false,
+          "manualGuidance": false,
+          "autoBlock": false,
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+        },
+        "evidence": {
+          "threshold": 0.7,
+          "noMatchReason": "AI 분석 결과 없음"
+        }
+      },
+      {
+        "scenarioId": 9,
+        "code": "WAF-S009",
+        "name": "Threat sequence judgment",
+        "priorityScore": 80,
+        "matched": false,
+        "attackerIp": "172.212.217.10",
+        "attackerIps": [],
+        "reason": "로그 순서 기반 위협 시퀀스가 확인되지 않았습니다.",
+        "recommendation": {
+          "ipBlockCandidate": false,
+          "manualGuidance": false,
+          "autoBlock": false,
+          "action": "시나리오 기준에 도달하지 않아 수동차단 후보로 올리지 않습니다."
+        },
+        "evidence": {
+          "timeWindowMinutes": 30,
+          "phaseStatus": {
+            "probeFound": true,
+            "adminAccessFound": false,
+            "exploitPayloadFound": true,
+            "orderedSequenceFound": false
+          },
+          "noMatchReason": "admin-access phase 없음 또는 probe → admin → exploit 순서가 완성되지 않음"
+        }
+      }
+    ]
+  },
+  "matchedScenarios": [
+    10
+  ],
+  "representativeScenario": {
+    "scenarioId": 10,
+    "code": "WAF-S010",
+    "name": "Mixed attack types by same IP",
+    "priorityScore": 60,
+    "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+    "attackerIp": "51.161.37.213"
+  },
+  "groupScenarioResults": [
+    {
+      "id": "G001",
+      "code": "WAF-G001",
+      "name": "반복 스캐닝 기반 IP 차단 검토",
+      "description": "동일 IP의 severity별 반복 스캐닝 탐지를 운영형 판단으로 묶습니다.",
+      "matched": false,
+      "mappedScenarioIds": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "matchedScenarioIds": [],
+      "priorityScore": 50,
+      "manualGuidance": true,
+      "gmailEligible": true,
+      "autoEligible": false,
+      "evidence": {
+        "representativeLowLevelScenario": "",
+        "matchedLowLevelScenarios": [],
+        "reason": "Mapped low-level scenarios did not match."
+      }
+    },
+    {
+      "id": "G002",
+      "code": "WAF-G002",
+      "name": "고위험 단건 공격 검토",
+      "description": "비스캐닝 Critical 단건 공격을 운영형 고위험 이벤트로 검토합니다.",
+      "matched": false,
+      "mappedScenarioIds": [
+        6
+      ],
+      "matchedScenarioIds": [],
+      "priorityScore": 70,
+      "manualGuidance": true,
+      "gmailEligible": true,
+      "autoEligible": false,
+      "evidence": {
+        "representativeLowLevelScenario": "",
+        "matchedLowLevelScenarios": [],
+        "reason": "Mapped low-level scenarios did not match."
+      }
+    },
+    {
+      "id": "G003",
+      "code": "WAF-G003",
+      "name": "고객사 중요 필터 검토",
+      "description": "고객사 또는 그룹별 중요 커스텀 필터 매칭을 운영형 판단으로 묶습니다.",
+      "matched": false,
+      "mappedScenarioIds": [
+        7
+      ],
+      "matchedScenarioIds": [],
+      "priorityScore": 65,
+      "manualGuidance": true,
+      "gmailEligible": true,
+      "autoEligible": false,
+      "evidence": {
+        "representativeLowLevelScenario": "",
+        "matchedLowLevelScenarios": [],
+        "reason": "Mapped low-level scenarios did not match."
+      }
+    },
+    {
+      "id": "G004",
+      "code": "WAF-G004",
+      "name": "공격 시퀀스 기반 검토",
+      "description": "탐색, 관리자 접근, exploit payload 흐름을 운영형 sequence 판단으로 묶습니다.",
+      "matched": false,
+      "mappedScenarioIds": [
+        9
+      ],
+      "matchedScenarioIds": [],
+      "priorityScore": 85,
+      "manualGuidance": true,
+      "gmailEligible": true,
+      "autoEligible": false,
+      "evidence": {
+        "representativeLowLevelScenario": "",
+        "matchedLowLevelScenarios": [],
+        "reason": "Mapped low-level scenarios did not match."
+      }
+    },
+    {
+      "id": "G005",
+      "code": "WAF-G005",
+      "name": "복합 공격 유형 검토",
+      "description": "동일 IP의 복수 공격 유형 또는 복수 위험도 혼합을 운영형 판단으로 묶습니다.",
+      "matched": false,
+      "mappedScenarioIds": [
+        10
+      ],
+      "matchedScenarioIds": [],
+      "priorityScore": 80,
+      "manualGuidance": true,
+      "gmailEligible": true,
+      "autoEligible": false,
+      "evidence": {
+        "representativeLowLevelScenario": "WAF-S010",
+        "matchedLowLevelScenarios": [
+          "WAF-S010"
+        ],
+        "reason": "복수 공격 유형은 확인되었으나 동일 IP 이벤트 수가 2건 미만이므로 운영형 WAF-G005 조건에는 도달하지 않았습니다.",
+        "noMatchReason": "복수 공격 유형은 확인되었으나 동일 IP 이벤트 수가 2건 미만이므로 운영형 WAF-G005 조건에는 도달하지 않았습니다.",
+        "lowLevelMatched": true,
+        "distinctAttackTypes": 3,
+        "totalEvents": 1,
+        "uniquePaths": 1
+      }
+    },
+    {
+      "id": "G006",
+      "code": "WAF-G006",
+      "name": "분산 유사 공격 검토",
+      "description": "짧은 시간 안에 여러 IP에서 발생한 유사 공격을 운영형 분산 공격 판단으로 묶습니다.",
+      "matched": false,
+      "mappedScenarioIds": [
+        11
+      ],
+      "matchedScenarioIds": [],
+      "priorityScore": 90,
+      "manualGuidance": true,
+      "gmailEligible": true,
+      "autoEligible": false,
+      "evidence": {
+        "representativeLowLevelScenario": "",
+        "matchedLowLevelScenarios": [],
+        "reason": "Mapped low-level scenarios did not match."
+      }
+    },
+    {
+      "id": "G007",
+      "code": "WAF-G007",
+      "name": "외부 평판/TI 보강 검토",
+      "description": "VT/TI 외부 평판 결과를 운영형 보강 근거로 묶습니다.",
+      "matched": false,
+      "mappedScenarioIds": [
+        1
+      ],
+      "matchedScenarioIds": [],
+      "priorityScore": 75,
+      "manualGuidance": true,
+      "gmailEligible": false,
+      "autoEligible": false,
+      "evidence": {
+        "representativeLowLevelScenario": "",
+        "matchedLowLevelScenarios": [],
+        "reason": "Mapped low-level scenarios did not match."
+      }
+    },
+    {
+      "id": "G008",
+      "code": "WAF-G008",
+      "name": "AI 분석 보강 검토",
+      "description": "AI 또는 rule-based 악성 확률 판단을 운영형 보강 근거로 묶습니다.",
+      "matched": false,
+      "mappedScenarioIds": [
+        8
+      ],
+      "matchedScenarioIds": [],
+      "priorityScore": 60,
+      "manualGuidance": true,
+      "gmailEligible": false,
+      "autoEligible": false,
+      "evidence": {
+        "representativeLowLevelScenario": "",
+        "matchedLowLevelScenarios": [],
+        "reason": "Mapped low-level scenarios did not match."
+      }
+    }
+  ],
+  "matchedGroupScenarios": [],
+  "representativeGroupScenario": null,
+  "suppression": {
+    "suppressed": false,
+    "reason": "",
+    "matchedRuleId": "",
+    "matchedValue": "",
+    "action": ""
+  },
+  "ipBlockRecommendation": {
+    "candidate": true,
+    "attackerIp": "51.161.37.213",
+    "totalEvents": 3,
+    "blockedEvents": 2,
+    "detectedEvents": 1,
+    "uniquePaths": 3,
+    "reason": "대표 시나리오 WAF-S010 Mixed attack types by same IP 매칭: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+    "recommendedAction": "웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 차단을 검토하세요.",
+    "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual",
+    "autoBlock": false,
+    "matchedScenarios": [
+      10
+    ],
+    "representativeScenario": {
+      "scenarioId": 10,
+      "code": "WAF-S010",
+      "name": "Mixed attack types by same IP",
+      "priorityScore": 60,
+      "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+      "attackerIp": "51.161.37.213"
+    },
+    "matchedGroupScenarios": [],
+    "representativeGroupScenario": null
+  },
+  "manualBlockGuidance": {
+    "enabled": true,
+    "autoBlock": false,
+    "attackerIp": "51.161.37.213",
+    "message": "공격자 IP 51.161.37.213에서 총 1개 정탐이 탐지되어 IP주소 차단 검토가 필요합니다. 대표 판단: WAF-S010 Mixed attack types by same IP. 매칭 시나리오: WAF-S010.",
+    "uiAction": "하단 수동차단 버튼을 선택해 웹 화면에서 확인 후 차단하세요.",
+    "stopAfterGuidance": true,
+    "clickedManualBlock": false,
+    "clickedSaveOrConfirm": false,
+    "overlayShown": true,
+    "overlayType": "in-browser-guidance",
+    "overlayTitle": "IP 차단 검토 필요",
+    "manualBlockButtonLocated": false,
+    "manualBlockButtonSelector": "",
+    "matchedScenarios": [
+      10
+    ],
+    "representativeScenario": {
+      "scenarioId": 10,
+      "code": "WAF-S010",
+      "name": "Mixed attack types by same IP",
+      "priorityScore": 60,
+      "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+      "attackerIp": "51.161.37.213"
+    },
+    "suppression": {
+      "suppressed": false,
+      "reason": "",
+      "matchedRuleId": "",
+      "matchedValue": "",
+      "action": ""
+    },
+    "scenarioSummary": "WAF-S010: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+    "scenarioEvidence": [
+      {
+        "scenarioId": 10,
+        "code": "WAF-S010",
+        "title": "Mixed attack types by same IP",
+        "priorityScore": 60,
+        "attackerIp": "51.161.37.213",
+        "attackerIps": [],
+        "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+        "evidence": {
+          "threshold": 2,
+          "totalEvents": 1,
+          "distinctAttackTypes": 3,
+          "attackTypes": [
+            "SCANNER",
+            "FILE UPLOAD",
+            "RCE"
+          ],
+          "severities": [
+            "CRITICAL",
+            "HIGH",
+            "MIDDLE"
+          ],
+          "uniquePaths": 1,
+          "samplePaths": [
+            "/응용프로그램-로깅과-분석/"
+          ]
+        }
+      }
+    ],
+    "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+  },
+  "repeatedAttacker": {
+    "attackerIp": "78.153.140.93",
+    "totalEvents": 3,
+    "blockedEvents": 2,
+    "detectedEvents": 1,
+    "uniquePaths": 3,
+    "paths": [
+      "/ 0x%5B%5D=androxgh0st",
+      "/.env",
+      "/"
+    ],
+    "hasCriticalOrWebShell": true,
+    "hasPhpOrWordPressScan": true
+  },
+  "notes": [
+    "WAF detail-tab collect prioritizes the lower detail panel instead of full-log direct navigation.",
+    "This mode may click the 로그 or 원본 로그 tab only. AI and 이동 menu are not clicked.",
+    "Gmail sending remains disabled in this mode.",
+    "Row count confirmed: 20",
+    "Selected row 0 by priority policy: blocked=true; detectionType contains \"차단\" or block; risk/classification contains CRITICAL.",
+    "선택한 row 0의 detail action 후보를 클릭했습니다: tbody tr td:nth-child(19) i:nth-of-type(1)",
+    "상세 화면으로 보이는 신호를 확인했습니다.",
+    "WAF 상세 하단 영역에서 분석/로그 탭 후보를 우선 수집했습니다.",
+    "AI 버튼과 이동 메뉴는 후보만 수집하고 클릭하지 않았습니다."
+  ],
+  "manualReviewRequired": true,
+  "browserKeptOpen": false,
+  "autoBlockExecuted": false,
+  "reviewReason": "대표 시나리오 WAF-S010 Mixed attack types by same IP 매칭: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+  "reviewIp": "51.161.37.213",
+  "gmail": {
+    "payload": {
+      "to": [
+        "joo@qubitsec.com"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "[PLURA-XDR] WAF IP 차단 검토 필요 - 51.161.37.213 / 대표 시나리오 WAF-S010",
+      "markdownBody": "# WAF IP 차단 검토 필요\n\n공격자 IP 78.153.140.93에서 오늘 총 3개 정탐이 탐지되었습니다. PHP/WordPress 계열 경로 스캔이 반복되었고, / 요청은 WAF에서 차단되었습니다. PLURA-WAF 세션 차단뿐 아니라 IP주소 차단 검토가 필요합니다.\n\n- 대표 운영형 시나리오: -\n- 운영형 판단 사유: -\n- 상세 근거: WAF-S010\n\n## 분석 결과 요약\n\n- 실행 상태: OK\n- 조회 날짜: 오늘 / 2026-05-01 ~ 2026-05-01\n- 공격자 IP: 78.153.140.93\n- 총 이벤트 수: 3\n- 차단 수: 2\n- 탐지 수: 1\n- 고유 경로 수: 3\n- 사용자 수동 확인 대기: true\n- 브라우저 유지: false\n- 자동 IP 차단 수행: false\n- 확인 대상 IP: 51.161.37.213\n- IP 차단 후보: true\n- 발송 판단: 반복성 낮음 또는 발송 조건 미충족\n- 종료 방법: 설정된 대기 시간 후 자동 종료\n\n## IP 차단 검토 안내\n\n- 판단 이유: 대표 시나리오 WAF-S010 Mixed attack types by same IP 매칭: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.\n- 권고 조치: 웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 차단을 검토하세요.\n- 자동 차단 수행: false\n- 수동차단 안내 활성화: true\n- 브라우저 안내 overlay 표시: true\n- 수동차단 버튼 위치 확인: false\n- 수동차단 버튼 selector: -\n- 수동차단 버튼 클릭: false\n- 저장/확인 클릭: false\n- 수동 IP 차단 매뉴얼: https://docs.plura.io/ko/v6/fn/comm/ipblock/manual\n\n## Allowlist / Suppression\n\n- suppressed: false\n- action: -\n- matchedRuleId: -\n- matchedValue: -\n- matchedField: -\n- matchedIp: -\n- reason: -\n- result: allowlist suppression 미적용\n\n## 매칭된 시나리오\n\n- 선택: 1-10 => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n- matchedScenarios: [10]\n- matchedCount: 1\n- representativeScenario: WAF-S010 Mixed attack types by same IP\n- representativePriorityScore: 60\n- representativeReason: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.\n- evaluatedScenarios: 10\n- finalIpBlockCandidate: true\n- autoBlock: false\n\n## 운영형 대표 시나리오\n\n- matchedGroupScenarios: []\n- representativeGroupScenario: -\n- representativeGroupPriorityScore: -\n- representativeGroupReason: -\n- representativeLowLevelScenario: -\n\n| group | priorityScore | matched | mapped | matchedLowLevel | reason |\n|---|---:|---:|---|---|---|\n| WAF-G001 반복 스캐닝 기반 IP 차단 검토 | 50 | false | 2, 3, 4, 5 | - | Mapped low-level scenarios did not match. |\n| WAF-G002 고위험 단건 공격 검토 | 70 | false | 6 | - | Mapped low-level scenarios did not match. |\n| WAF-G003 고객사 중요 필터 검토 | 65 | false | 7 | - | Mapped low-level scenarios did not match. |\n| WAF-G004 공격 시퀀스 기반 검토 | 85 | false | 9 | - | Mapped low-level scenarios did not match. |\n| WAF-G005 복합 공격 유형 검토 | 80 | false | 10 | - | 복수 공격 유형은 확인되었으나 동일 IP 이벤트 수가 2건 미만이므로 운영형 WAF-G005 조건에는 도달하지 않았습니다. |\n| WAF-G006 분산 유사 공격 검토 | 90 | false | 11 | - | Mapped low-level scenarios did not match. |\n| WAF-G007 외부 평판/TI 보강 검토 | 75 | false | 1 | - | Mapped low-level scenarios did not match. |\n| WAF-G008 AI 분석 보강 검토 | 60 | false | 8 | - | Mapped low-level scenarios did not match. |\n\n| scenario | priorityScore | matched | attackerIp | reason |\n|---|---:|---:|---|---|\n| WAF-S001 VT malicious ratio | 90 | false | 78.153.140.93 | VT 분석 결과가 없어 수동차단 후보로 올리지 않습니다. |\n| WAF-S002 Scanning Low threshold | 30 | false | - | 스캐닝성 LOW 이벤트가 기준 30건에 도달하지 않았습니다. |\n| WAF-S003 Scanning Middle threshold | 40 | false | 172.212.217.10 | 스캐닝성 MIDDLE 이벤트가 기준 20건에 도달하지 않았습니다. |\n| WAF-S004 Scanning High threshold | 50 | false | 185.191.171.8 | 스캐닝성 HIGH 이벤트가 기준 10건에 도달하지 않았습니다. |\n| WAF-S005 Scanning Critical threshold | 65 | false | 185.191.171.8 | 스캐닝성 CRITICAL 이벤트가 기준 3건에 도달하지 않았습니다. |\n| WAF-S006 Non-scanning Critical | 70 | false | - | 비스캐닝 CRITICAL 이벤트가 확인되지 않았습니다. |\n| WAF-S007 Customer custom filter | 55 | false | - | 매칭되는 고객사 커스텀 필터 탐지가 없어 수동차단 후보로 올리지 않습니다. |\n| WAF-S008 AI malicious probability | 75 | false | 185.191.171.8 | AI 분석 결과가 없어 수동차단 후보로 올리지 않습니다. |\n| WAF-S009 Threat sequence judgment | 80 | false | 172.212.217.10 | 로그 순서 기반 위협 시퀀스가 확인되지 않았습니다. |\n| WAF-S010 Mixed attack types by same IP | 60 | true | 51.161.37.213 | 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다. |\n\n## 시나리오 상세 근거\n\n### WAF-S010 Mixed attack types by same IP\n- priorityScore: 60\n- attackerIp: 51.161.37.213\n- attackerIps: -\n- reason: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.\n- recommendation: 웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 수동차단을 검토하세요.\n- evidence: {\"threshold\":2,\"totalEvents\":1,\"distinctAttackTypes\":3,\"attackTypes\":[\"SCANNER\",\"FILE UPLOAD\",\"RCE\"],\"severities\":[\"CRITICAL\",\"HIGH\",\"MIDDLE\"],\"uniquePaths\":1,\"samplePaths\":[\"/응용프로그램-로깅과-분석/\"]}\n\n\n## 최종 IP 차단 검토 사유\n\n최종 IP 차단 검토 사유: WAF-S010 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다. 자동 IP 차단은 수행하지 않으며 담당자가 웹 화면에서 수동 확인 후 결정합니다.\n\n## 반복 요청 경로\n\n| path |\n|---|\n| / 0x%5B%5D=androxgh0st |\n| /.env |\n| / |\n\n## 우선순위 차단 이벤트\n\n- 공격자 IP: 78.153.140.93\n- 대상 도메인: 130.162.156.89\n- 요청 Method: POST\n- URI/path: /\n- 쿼리/요청본문: 0x%5B%5D=androxgh0st\n- HTTP 상태값: 406\n- 탐지/차단 유형: 차단(OWASP)\n- WAF 필터명: Androxgh0st 봇넷\n- 위험도/risk: SCANNER>CRITICAL\n- 탐지 시각: 2026-05-01 14:30:32.436\n- 분석 탭 수집: true\n- 로그 탭 수집: true\n\n## 원본 로그 주요 필드\n\n- method: POST\n- uri: /\n- host: 130.162.156.89\n- remoteIp: 78.153.140.93\n- responseStatus: 406\n\n## 담당자 확인 항목\n\n1. 공격자 IP 78.153.140.93의 동일 시간대 반복 요청 전체 확인\n2. 반복 경로가 PHP/WordPress 백도어/관리자 경로 스캔인지 확인\n3. 차단(OWASP)와 HTTP 406이 정상 차단 정책과 일치하는지 확인\n4. 동일 IP의 후속 요청이 계속 발생하는지 확인\n5. 웹 UI에서 IP주소 차단 등록 여부 결정",
+      "htmlBody": "<!doctype html>\n<html lang=\"ko\">\n<head>\n  <meta charset=\"utf-8\">\n</head>\n<body style=\"margin:0;padding:0;background:#f4f7fb;color:#172033;font-family:Arial,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;\">\n  <div style=\"max-width:1120px;margin:0 auto;padding:24px;\">\n    <div style=\"background:#123456;color:#fff;padding:22px 26px;border-radius:8px;\">\n      <h1 style=\"margin:0 0 8px;font-size:22px;\">[PLURA-XDR] WAF IP 차단 검토 필요 - 51.161.37.213 / 대표 시나리오 WAF-S010</h1>\n      <p style=\"margin:0;color:#d8e6f7;\">공격자 IP 78.153.140.93에서 오늘 총 3개 정탐이 탐지되었습니다. PHP/WordPress 계열 경로 스캔이 반복되었고, / 요청은 WAF에서 차단되었습니다. PLURA-WAF 세션 차단뿐 아니라 IP주소 차단 검토가 필요합니다.</p>\n    </div>\n    <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%;border-collapse:separate;border-spacing:8px;margin:16px 0;\">\n      <tr>\n        <td style=\"background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;\"><div style=\"font-size:12px;color:#667085;\">대표 운영형</div><div style=\"margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;\">-</div></td>\n        <td style=\"background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;\"><div style=\"font-size:12px;color:#667085;\">공격자 IP</div><div style=\"margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;\">78.153.140.93</div></td>\n        <td style=\"background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;\"><div style=\"font-size:12px;color:#667085;\">총 이벤트 수</div><div style=\"margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;\">3</div></td>\n        <td style=\"background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;\"><div style=\"font-size:12px;color:#667085;\">차단 수</div><div style=\"margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;\">2</div></td>\n        <td style=\"background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;\"><div style=\"font-size:12px;color:#667085;\">탐지 수</div><div style=\"margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;\">1</div></td>\n        <td style=\"background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;\"><div style=\"font-size:12px;color:#667085;\">고유 경로 수</div><div style=\"margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;\">3</div></td>\n        <td style=\"background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;width:16.6%;vertical-align:top;\"><div style=\"font-size:12px;color:#667085;\">IP 차단 후보</div><div style=\"margin-top:6px;font-size:18px;font-weight:700;word-break:break-word;\">예</div></td>\n      </tr>\n    </table>\n    <div style=\"background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;border-left:4px solid #c2410c;\">\n      <h2 style=\"font-size:18px;margin:0 0 10px;color:#172033;\">IP 차단 검토 안내</h2>\n      <p style=\"margin:0 0 8px;\">대표 시나리오 WAF-S010 Mixed attack types by same IP 매칭: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.</p>\n      <p style=\"margin:0 0 8px;\">웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 차단을 검토하세요.</p>\n      <p style=\"margin:0 0 8px;\">자동 IP 차단은 수행하지 않았습니다.</p>\n      <p style=\"margin:0 0 8px;\">하단 수동차단 버튼을 선택해 웹 화면에서 확인 후 차단하세요.</p>\n      <p style=\"margin:0 0 8px;\">사용자 수동 확인 대기: true / 브라우저 유지: false</p>\n      <p style=\"margin:0 0 8px;\">확인 대상 IP: 51.161.37.213 / 자동 IP 차단 수행: false</p>\n      <p style=\"margin:0 0 8px;\">설정된 대기 시간이 지나 브라우저를 종료했습니다.</p>\n      <p style=\"margin:0 0 8px;\">브라우저 안내 overlay 표시: true / 수동차단 버튼 위치 확인: false</p>\n      <p style=\"margin:0 0 8px;\">수동차단 버튼 selector: -</p>\n      <p style=\"margin:0 0 8px;\">수동차단 버튼 클릭: false / 저장·확인 클릭: false</p>\n      <p style=\"margin:0 0 8px;\">실제 차단은 웹 화면에서 요청 경로와 탐지/차단 이력을 확인한 뒤 수행하세요.</p>\n      <p style=\"margin:0;\">참고: <a href=\"https://docs.plura.io/ko/v6/fn/comm/ipblock/manual\" style=\"color:#1d4ed8;\">수동 IP 차단 매뉴얼</a></p>\n    </div>\n    <div style=\"background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;margin-top:16px;border-left:4px solid #2f6fed;background:#ffffff;\">\n      <h2 style=\"font-size:18px;margin:0 0 10px;color:#172033;\">Allowlist / Suppression</h2>\n      <p style=\"margin:0 0 8px;\">suppressed: false</p>\n      <p style=\"margin:0 0 8px;\">result: allowlist suppression 미적용</p>\n      <table style=\"width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;\">\n        <tbody>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Rule</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Value</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Field</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">IP</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Reason</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Action</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td></tr>\n        </tbody>\n      </table>\n    </div>\n    <div style=\"background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;margin-top:16px;\">\n      <h2 style=\"font-size:18px;margin:0 0 10px;color:#172033;\">매칭된 시나리오</h2>\n      <p style=\"margin:0 0 8px;\">선택: 1-10 =&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</p>\n      <p style=\"margin:0 0 8px;\">matchedScenarios: [10]</p>\n      <p style=\"margin:0 0 8px;\">matchedCount: 1</p>\n      <p style=\"margin:0 0 8px;\">representativeScenario: WAF-S010 Mixed attack types by same IP / score 60</p>\n      <p style=\"margin:0 0 8px;\">representativeReason: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.</p>\n      <div style=\"margin:14px 0;padding:10px;border-left:4px solid #2f6fed;background:#f8fbff;\">\n        <h3 style=\"font-size:15px;margin:0 0 8px;color:#172033;\">운영형 대표 시나리오</h3>\n        <p style=\"margin:0 0 6px;\">matchedGroupScenarios: []</p>\n        <p style=\"margin:0 0 6px;\">representativeGroupScenario: -</p>\n        <p style=\"margin:0 0 6px;\">representativeLowLevelScenario: -</p>\n        <p style=\"margin:0;\">reason: -</p>\n      </div>\n      <table style=\"width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;\">\n        <thead>\n          <tr>\n            <th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Group</th>\n            <th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Score</th>\n            <th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Matched</th>\n            <th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Mapped</th>\n            <th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Matched Low-level</th>\n            <th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Reason</th>\n          </tr>\n        </thead>\n        <tbody>\n          \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-G001 반복 스캐닝 기반 IP 차단 검토</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">50</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">2, 3, 4, 5</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">Mapped low-level scenarios did not match.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-G002 고위험 단건 공격 검토</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">70</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">6</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">Mapped low-level scenarios did not match.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-G003 고객사 중요 필터 검토</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">65</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">7</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">Mapped low-level scenarios did not match.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-G004 공격 시퀀스 기반 검토</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">85</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">9</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">Mapped low-level scenarios did not match.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-G005 복합 공격 유형 검토</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">80</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">10</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">복수 공격 유형은 확인되었으나 동일 IP 이벤트 수가 2건 미만이므로 운영형 WAF-G005 조건에는 도달하지 않았습니다.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-G006 분산 유사 공격 검토</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">90</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">11</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">Mapped low-level scenarios did not match.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-G007 외부 평판/TI 보강 검토</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">75</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">1</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">Mapped low-level scenarios did not match.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-G008 AI 분석 보강 검토</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">60</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">8</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">Mapped low-level scenarios did not match.</td>\n                  </tr>\n                \n        </tbody>\n      </table>\n      <table style=\"width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;\">\n        <thead>\n          <tr>\n            <th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Scenario</th>\n            <th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Score</th>\n            <th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Matched</th>\n            <th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Attacker IP</th>\n            <th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">판단 근거</th>\n          </tr>\n        </thead>\n        <tbody>\n          \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-S001 VT malicious ratio</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">90</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">78.153.140.93</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">VT 분석 결과가 없어 수동차단 후보로 올리지 않습니다.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-S002 Scanning Low threshold</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">30</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">스캐닝성 LOW 이벤트가 기준 30건에 도달하지 않았습니다.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-S003 Scanning Middle threshold</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">40</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">172.212.217.10</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">스캐닝성 MIDDLE 이벤트가 기준 20건에 도달하지 않았습니다.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-S004 Scanning High threshold</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">50</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">185.191.171.8</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">스캐닝성 HIGH 이벤트가 기준 10건에 도달하지 않았습니다.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-S005 Scanning Critical threshold</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">65</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">185.191.171.8</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">스캐닝성 CRITICAL 이벤트가 기준 3건에 도달하지 않았습니다.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-S006 Non-scanning Critical</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">70</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">비스캐닝 CRITICAL 이벤트가 확인되지 않았습니다.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-S007 Customer custom filter</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">55</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">매칭되는 고객사 커스텀 필터 탐지가 없어 수동차단 후보로 올리지 않습니다.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-S008 AI malicious probability</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">75</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">185.191.171.8</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">AI 분석 결과가 없어 수동차단 후보로 올리지 않습니다.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-S009 Threat sequence judgment</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">80</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">false</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">172.212.217.10</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">로그 순서 기반 위협 시퀀스가 확인되지 않았습니다.</td>\n                  </tr>\n                \n                  <tr>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">WAF-S010 Mixed attack types by same IP</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">60</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">true</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">51.161.37.213</td>\n                    <td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.</td>\n                  </tr>\n                \n        </tbody>\n      </table>\n      \n    <div style=\"margin-top:12px;\">\n      <h3 style=\"font-size:15px;margin:0 0 8px;color:#172033;\">WAF-S010 Mixed attack types by same IP</h3>\n      <table style=\"width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;\">\n        <tbody>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">attackerIp</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">51.161.37.213</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">priorityScore</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">60</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">attackerIps</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">-</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">reason</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">recommendation</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 수동차단을 검토하세요.</td></tr>\n        </tbody>\n      </table>\n      <p style=\"margin:8px 0;\">{&quot;threshold&quot;:2,&quot;totalEvents&quot;:1,&quot;distinctAttackTypes&quot;:3,&quot;attackTypes&quot;:[&quot;SCANNER&quot;,&quot;FILE UPLOAD&quot;,&quot;RCE&quot;],&quot;severities&quot;:[&quot;CRITICAL&quot;,&quot;HIGH&quot;,&quot;MIDDLE&quot;],&quot;uniquePaths&quot;:1,&quot;samplePaths&quot;:[&quot;/응용프로그램-로깅과-분석/&quot;]}</p>\n    </div>\n      <p style=\"margin:10px 0 0;\">최종 IP 차단 검토 사유: WAF-S010 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다. 자동 IP 차단은 수행하지 않으며 담당자가 웹 화면에서 수동 확인 후 결정합니다.</p>\n    </div>\n    <div style=\"margin-top:20px;\">\n      <h2 style=\"font-size:18px;margin:0 0 10px;color:#172033;\">반복 요청 경로</h2>\n      <table style=\"width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;\">\n        <thead><tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;\">Path</th></tr></thead>\n        <tbody>\n          <tr><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">/ 0x%5B%5D=androxgh0st</td></tr><tr><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">/.env</td></tr><tr><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">/</td></tr>\n        </tbody>\n      </table>\n    </div>\n    \n    <div style=\"margin-top:20px;\">\n      <h2 style=\"font-size:18px;margin:0 0 10px;color:#172033;\">우선순위 차단 이벤트</h2>\n      <table style=\"width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;\">\n        <tbody>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">공격자 IP</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">78.153.140.93</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">대상 도메인</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">130.162.156.89</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">요청 Method</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">POST</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">URI/path</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">/</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">쿼리/요청본문</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">0x%5B%5D=androxgh0st</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">HTTP 상태값</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">406</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">탐지/차단 유형</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">차단(OWASP)</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">WAF 필터명</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">Androxgh0st 봇넷</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">위험도/risk</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">SCANNER&gt;CRITICAL</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">탐지 시각</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">2026-05-01 14:30:32.436</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">분석 탭 수집</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">true</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">로그 탭 수집</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">true</td></tr>\n        </tbody>\n      </table>\n    </div>\n    <div style=\"margin-top:20px;\">\n      <h2 style=\"font-size:18px;margin:0 0 10px;color:#172033;\">원본 로그 주요 필드</h2>\n      <table style=\"width:100%;border-collapse:collapse;background:#fff;border:1px solid #dbe3ef;\">\n        <tbody>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">method</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">POST</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">uri</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">/</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">host</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">130.162.156.89</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">remoteIp</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">78.153.140.93</td></tr>\n          <tr><th style=\"padding:10px;border-bottom:1px solid #dbe3ef;background:#edf3fb;color:#263b59;text-align:left;vertical-align:top;font-size:13px;font-weight:700;;width:190px;\">responseStatus</th><td style=\"padding:10px;border-bottom:1px solid #e7edf5;text-align:left;vertical-align:top;font-size:13px;\">406</td></tr>\n          \n          \n          \n          \n        </tbody>\n      </table>\n    </div>\n    <div style=\"background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;margin-top:16px;\">\n      <h2 style=\"font-size:18px;margin:0 0 10px;color:#172033;\">담당자 확인 항목</h2>\n      <ol style=\"margin:0 0 0 18px;padding:0;\">\n        <li style=\"margin:0 0 6px;\">공격자 IP 78.153.140.93의 동일 시간대 반복 요청 전체 확인</li><li style=\"margin:0 0 6px;\">반복 경로가 PHP/WordPress 백도어/관리자 경로 스캔인지 확인</li><li style=\"margin:0 0 6px;\">차단(OWASP)와 HTTP 406이 정상 차단 정책과 일치하는지 확인</li><li style=\"margin:0 0 6px;\">동일 IP의 후속 요청이 계속 발생하는지 확인</li><li style=\"margin:0 0 6px;\">웹 UI에서 IP주소 차단 등록 여부 결정</li>\n      </ol>\n    </div>\n    <div style=\"background:#fff;border:1px solid #dbe3ef;border-radius:8px;padding:14px;;margin-top:16px;\">\n      <h2 style=\"font-size:18px;margin:0 0 10px;color:#172033;\">발송 판단</h2>\n      <p style=\"margin:0;\">단건 차단 또는 반복성 부족으로 메일 발송 우선순위를 낮게 판단했습니다.</p>\n    </div>\n  </div>\n</body>\n</html>",
+      "plainTextBody": " WAF IP 차단 검토 필요\n\n공격자 IP 78.153.140.93에서 오늘 총 3개 정탐이 탐지되었습니다. PHP/WordPress 계열 경로 스캔이 반복되었고, / 요청은 WAF에서 차단되었습니다. PLURA-WAF 세션 차단뿐 아니라 IP주소 차단 검토가 필요합니다.\n\n- 대표 운영형 시나리오: -\n- 운영형 판단 사유: -\n- 상세 근거: WAF-S010\n\n 분석 결과 요약\n\n- 실행 상태: OK\n- 조회 날짜: 오늘 / 2026-05-01 ~ 2026-05-01\n- 공격자 IP: 78.153.140.93\n- 총 이벤트 수: 3\n- 차단 수: 2\n- 탐지 수: 1\n- 고유 경로 수: 3\n- 사용자 수동 확인 대기: true\n- 브라우저 유지: false\n- 자동 IP 차단 수행: false\n- 확인 대상 IP: 51.161.37.213\n- IP 차단 후보: true\n- 발송 판단: 반복성 낮음 또는 발송 조건 미충족\n- 종료 방법: 설정된 대기 시간 후 자동 종료\n\n IP 차단 검토 안내\n\n- 판단 이유: 대표 시나리오 WAF-S010 Mixed attack types by same IP 매칭: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.\n- 권고 조치: 웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 차단을 검토하세요.\n- 자동 차단 수행: false\n- 수동차단 안내 활성화: true\n- 브라우저 안내 overlay 표시: true\n- 수동차단 버튼 위치 확인: false\n- 수동차단 버튼 selector: -\n- 수동차단 버튼 클릭: false\n- 저장/확인 클릭: false\n- 수동 IP 차단 매뉴얼: https://docs.plura.io/ko/v6/fn/comm/ipblock/manual\n\n Allowlist / Suppression\n\n- suppressed: false\n- action: -\n- matchedRuleId: -\n- matchedValue: -\n- matchedField: -\n- matchedIp: -\n- reason: -\n- result: allowlist suppression 미적용\n\n 매칭된 시나리오\n\n- 선택: 1-10 => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n- matchedScenarios: [10]\n- matchedCount: 1\n- representativeScenario: WAF-S010 Mixed attack types by same IP\n- representativePriorityScore: 60\n- representativeReason: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.\n- evaluatedScenarios: 10\n- finalIpBlockCandidate: true\n- autoBlock: false\n\n 운영형 대표 시나리오\n\n- matchedGroupScenarios: []\n- representativeGroupScenario: -\n- representativeGroupPriorityScore: -\n- representativeGroupReason: -\n- representativeLowLevelScenario: -\n\n| group | priorityScore | matched | mapped | matchedLowLevel | reason |\n|---|---:|---:|---|---|---|\n| WAF-G001 반복 스캐닝 기반 IP 차단 검토 | 50 | false | 2, 3, 4, 5 | - | Mapped low-level scenarios did not match. |\n| WAF-G002 고위험 단건 공격 검토 | 70 | false | 6 | - | Mapped low-level scenarios did not match. |\n| WAF-G003 고객사 중요 필터 검토 | 65 | false | 7 | - | Mapped low-level scenarios did not match. |\n| WAF-G004 공격 시퀀스 기반 검토 | 85 | false | 9 | - | Mapped low-level scenarios did not match. |\n| WAF-G005 복합 공격 유형 검토 | 80 | false | 10 | - | 복수 공격 유형은 확인되었으나 동일 IP 이벤트 수가 2건 미만이므로 운영형 WAF-G005 조건에는 도달하지 않았습니다. |\n| WAF-G006 분산 유사 공격 검토 | 90 | false | 11 | - | Mapped low-level scenarios did not match. |\n| WAF-G007 외부 평판/TI 보강 검토 | 75 | false | 1 | - | Mapped low-level scenarios did not match. |\n| WAF-G008 AI 분석 보강 검토 | 60 | false | 8 | - | Mapped low-level scenarios did not match. |\n\n| scenario | priorityScore | matched | attackerIp | reason |\n|---|---:|---:|---|---|\n| WAF-S001 VT malicious ratio | 90 | false | 78.153.140.93 | VT 분석 결과가 없어 수동차단 후보로 올리지 않습니다. |\n| WAF-S002 Scanning Low threshold | 30 | false | - | 스캐닝성 LOW 이벤트가 기준 30건에 도달하지 않았습니다. |\n| WAF-S003 Scanning Middle threshold | 40 | false | 172.212.217.10 | 스캐닝성 MIDDLE 이벤트가 기준 20건에 도달하지 않았습니다. |\n| WAF-S004 Scanning High threshold | 50 | false | 185.191.171.8 | 스캐닝성 HIGH 이벤트가 기준 10건에 도달하지 않았습니다. |\n| WAF-S005 Scanning Critical threshold | 65 | false | 185.191.171.8 | 스캐닝성 CRITICAL 이벤트가 기준 3건에 도달하지 않았습니다. |\n| WAF-S006 Non-scanning Critical | 70 | false | - | 비스캐닝 CRITICAL 이벤트가 확인되지 않았습니다. |\n| WAF-S007 Customer custom filter | 55 | false | - | 매칭되는 고객사 커스텀 필터 탐지가 없어 수동차단 후보로 올리지 않습니다. |\n| WAF-S008 AI malicious probability | 75 | false | 185.191.171.8 | AI 분석 결과가 없어 수동차단 후보로 올리지 않습니다. |\n| WAF-S009 Threat sequence judgment | 80 | false | 172.212.217.10 | 로그 순서 기반 위협 시퀀스가 확인되지 않았습니다. |\n| WAF-S010 Mixed attack types by same IP | 60 | true | 51.161.37.213 | 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다. |\n\n 시나리오 상세 근거\n\n WAF-S010 Mixed attack types by same IP\n- priorityScore: 60\n- attackerIp: 51.161.37.213\n- attackerIps: -\n- reason: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.\n- recommendation: 웹 화면에서 해당 IP의 요청 경로와 탐지/차단 이력을 확인한 뒤 IP주소 수동차단을 검토하세요.\n- evidence: {\"threshold\":2,\"totalEvents\":1,\"distinctAttackTypes\":3,\"attackTypes\":[\"SCANNER\",\"FILE UPLOAD\",\"RCE\"],\"severities\":[\"CRITICAL\",\"HIGH\",\"MIDDLE\"],\"uniquePaths\":1,\"samplePaths\":[\"/응용프로그램-로깅과-분석/\"]}\n\n\n 최종 IP 차단 검토 사유\n\n최종 IP 차단 검토 사유: WAF-S010 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다. 자동 IP 차단은 수행하지 않으며 담당자가 웹 화면에서 수동 확인 후 결정합니다.\n\n 반복 요청 경로\n\n| path |\n|---|\n| / 0x%5B%5D=androxgh0st |\n| /.env |\n| / |\n\n 우선순위 차단 이벤트\n\n- 공격자 IP: 78.153.140.93\n- 대상 도메인: 130.162.156.89\n- 요청 Method: POST\n- URI/path: /\n- 쿼리/요청본문: 0x%5B%5D=androxgh0st\n- HTTP 상태값: 406\n- 탐지/차단 유형: 차단(OWASP)\n- WAF 필터명: Androxgh0st 봇넷\n- 위험도/risk: SCANNER>CRITICAL\n- 탐지 시각: 2026-05-01 14:30:32.436\n- 분석 탭 수집: true\n- 로그 탭 수집: true\n\n 원본 로그 주요 필드\n\n- method: POST\n- uri: /\n- host: 130.162.156.89\n- remoteIp: 78.153.140.93\n- responseStatus: 406\n\n 담당자 확인 항목\n\n1. 공격자 IP 78.153.140.93의 동일 시간대 반복 요청 전체 확인\n2. 반복 경로가 PHP/WordPress 백도어/관리자 경로 스캔인지 확인\n3. 차단(OWASP)와 HTTP 406이 정상 차단 정책과 일치하는지 확인\n4. 동일 IP의 후속 요청이 계속 발생하는지 확인\n5. 웹 UI에서 IP주소 차단 등록 여부 결정",
+      "shouldSend": false,
+      "skipReason": "WAF mail send is disabled unless PLURA_WAF_SEND_MAIL=true is explicitly set."
+    },
+    "result": {
+      "enabled": false,
+      "dryRun": true,
+      "attempted": false,
+      "sent": false,
+      "to": [
+        "joo@qubitsec.com"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "[PLURA-XDR] WAF IP 차단 검토 필요 - 51.161.37.213 / 대표 시나리오 WAF-S010",
+      "provider": "smtp",
+      "skippedReason": "GMAIL_ENABLED=false"
+    }
+  },
+  "rows": [],
+  "detailTabCollect": {
+    "runStatus": "OK",
+    "mode": "detail-tab-collect",
+    "runId": "plura-waf-20260501T061517Z",
+    "selectedDatePreset": "today",
+    "dateRange": {
+      "label": "오늘",
+      "startDate": "2026-05-01",
+      "endDate": "2026-05-01",
+      "source": "PLURA_WAF_DATE_PRESET",
+      "fallbackUsed": false,
+      "fallbackReason": ""
+    },
+    "navigation": {
+      "loginSucceeded": true,
+      "dashboardReached": true,
+      "wafMenuOpened": true,
+      "wafUrl": "https://xdr.plura.io/waf",
+      "matchedSelector": "role=link[name=/WAF|웹보안|웹방화벽/i]"
+    },
+    "rowCollect": {
+      "rowCount": 20,
+      "tableFound": true,
+      "headerCells": [
+        "번호",
+        "분류",
+        "코드",
+        "필터명",
+        "그룹",
+        "호스트",
+        "공격자",
+        "상태값",
+        "호스트(도메인)",
+        "메소드",
+        "경로",
+        "쿼리/요청본문",
+        "요청",
+        "응답",
+        "동일로그",
+        "유형",
+        "유출정보",
+        "날짜",
+        "이동"
+      ],
+      "rowsCollected": 10
+    },
+    "targetRowSelection": {
+      "strategy": "blocked-critical-first",
+      "reason": "Selected row 0 by priority policy: blocked=true; detectionType contains \"차단\" or block; risk/classification contains CRITICAL.",
+      "selectedIndex": 0
+    },
+    "targetRow": {
+      "index": 0,
+      "wafRuleName": "Androxgh0st 봇넷",
+      "attackerIp": "78.153.140.93",
+      "targetDomain": "130.162.156.89",
+      "method": "POST",
+      "path": "/",
+      "queryOrRequestBody": "0x%5B%5D=androxgh0st",
+      "httpStatusCode": "406",
+      "detectionType": "차단(OWASP)",
+      "blocked": true,
+      "blockStatus": "blocked",
+      "risk": "SCANNER>CRITICAL",
+      "repeatCount": "1",
+      "detectedAt": "2026-05-01 14:30:32.436"
+    },
+    "detailOpen": {
+      "opened": true,
+      "method": "detailAction",
+      "selector": "tbody tr td:nth-child(19) i:nth-of-type(1)",
+      "looksLikeDetailPage": true,
+      "reason": "Detail-like text and repeated first-row values were visible after the click."
+    },
+    "tabs": {
+      "analysis": {
+        "found": true,
+        "selected": true,
+        "selector": "",
+        "clicked": false,
+        "visibleText": "2026. 05. 01. 금요일 최종접속일 : 2026-05-01 15:15:33 대시보드 웹방화벽 호스트보안 마이터 어택 상관분석 보안탐지 전체로그 필터 IP차단 시스템관리 시스템보안관리 안전한OS관리 취약점 점검 보고서 TOOLS MANUAL UPDATE FAQ BLOG NEWS 관리 한국어 QUBITSECURITY Eliot님 안녕하세요! Install Agents 웹방화벽 날짜 (최신순) 20 2026-05-01 IP주소 차단로그 제외 총 로그 : 313 번호 분류 코드 필터명 그룹 호스트 공격자 상태값 호스트(도메인) 메소드 경로 쿼리/요청본문 요청 응답 동일로그 유형 유출정보 날짜 이동 313 SCANNER>CRITICAL A9 Androxgh0st 봇넷 xwaf-test 10.0.30.107 78.153.140.93 406 130.162.156.89 POST / 0x%5B%5D=androxgh0st 20 0 1 차단(OWASP) - 2026-05-01 14:30:32.436 312 SCANNER>CRITICAL LFI>HIGH A1 A1 환경 파일 접근 제한 파일 접근 xwaf-test 10.0.30.107 78.153.140.93 406 130.162.156.89 GET /.env - 0 0 1 차단(OWASP) - 2026-05-01 14:30:31.865 311 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.101 185.191.171.8 200 blog.plura.io GET /ko/threats/powershell-attack-techniques/ - 0 15,943 1 탐지(OWASP) - 2026-05-01 13:37:44.216 310 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.100 85.208.96.208 200 blog.plura.io GET /ko/column/limitations_of_non_decryption_detection/ - 0 29,409 1 탐지(OWASP) - 2026-05-01 13:27:07.563 309 SCANNER>HIGH FILE UPLOAD>CRITICAL RCE>CRITICAL A9 A2 A3 취약점 스캐너 UA SAP 메타데이터 업로더 RCE SAP 개발 서버 탐색 xwaf-test 10.0.30.107 135.237.125.118 406 130.162.156.89 GET /developmentserver/metadatauploader - 0 0 1 차단(OWASP) - 2026-05-01 13:26:29.625 308 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.100 51.161.37.213 404 blog.plura.io GET /응용프로그램-로깅과-분석/ - 0 169 1 탐지(OWASP) - 2026-05-01 12:59:24.661 307 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.100 94.23.188.197 200 blog.plura.io GET /robots.txt - 0 66 1 탐지(OWASP) - 2026-05-01 12:59:22.622 306 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.100 85.208.96.212 200 blog.plura.io GET /ko/column/quantum-era-cryptography/ - 0 31,257 1 탐지(OWASP) - 2026-05-01 12:48:19.102 305 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.101 185.191.171.15 200 blog.plura.io GET /robots.txt - 0 66 1 탐지(OWASP) - 2026-05-01 12:48:17.636 304 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /yindu.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:23.247 303 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /debug-php.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:22.197 302 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /conf.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:20.874 301 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /php-fpm.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:19.574 300 SCANNER>CRITICAL SCANNER>MIDDLE LFI>HIGH A1 A9 A1 환경 파일 접근 UA 누락 + PHP 파일 요청 제한 파일 접근 WAF-Blog 10.90.10.100 172.212.217.10 406 blog.plura.io GET /.env.test.php - 0 0 1 차단(OWASP) - 2026-05-01 11:14:18.010 299 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /oauth.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:16.780 298 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /u.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:15.413 297 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /000.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:13.896 296 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /mimes.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:12.553 295 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /aw.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:10.945 294 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /info_page.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:08.992 처음 이전 다음 © 2016–2026 Qubit Security Inc. All rights reserved. 이용약관 개인정보 처리방침 AI 시스템관리 전체로그 (=) 전체로그 (±1s) 전체로그 (±2s) 전체로그 (±3s) 전체로그 (±5s) 전체로그 (±10s) 전체로그 (±30s) 전체로그 (±60s) 전체로그 (=) 공격자",
+        "fields": {
+          "code": [
+            "2026. 05. 01. 금요일 최종접속일 : 2026-05-01 15:15:33 대시보드 웹방화벽 호스트보안 마이터 어택 상관분석 보안탐지 전체로그 필터 IP차단 시스템관리 시스템보안관리 안전한OS관리 취약점 점검 보고서 TOOLS MANUAL UPDATE FAQ BLOG NEWS 관리 한국어 QUBITSECURITY Eliot님 안녕하세요! Install Agents 웹방화벽 날짜 (최신순) 20 2026-05-01 IP주소 차단로그 제외 총 로그 : 313 번호 분류 코드 필터명 그룹 호스트 공격자 상태값 호스트(도메인) 메소드 경로 쿼리/요청본문 요청 응답 동일로그 유형 유출정보 날짜 이동 313 SCANNER>CRITICAL A9 Androxgh0st 봇넷 xwaf-test 10.0.30.107 78.153.140.93 406 130.162.156.89 POST / 0x%5B%5D=androxgh0st 20 0 1 차단(OWASP) - 2026-05-01 14:30:32.436 312 SCANNER>CRITICAL LFI>HIGH A1 A1 환경 파일 접근 제한 파일 접근 xwaf-test 10.0.30.107 78.153.140.93 406 130.162.156.89 GET /.env - 0 0 1 차단(OWASP) - 2026-05-01 14:30:31.865 311 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.101 185.191.171.8 200 blog.plura.io GET /ko/threats/powershell-attack-techniques/ - 0 15,943 1 탐지(OWASP) - 2026-05-01 13:37:44.216 310 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.100 85.208.96.208 200 blog.plura.io GET /ko/column/limitations_of_non_decryption_detection/ - 0 29,409 1 탐지(OWASP) - 2026-05-01 13:27:07.563 309 SCANNER>HIGH FILE UPLOAD>CRITICAL RCE>CRITICAL A9 A2 A3 취약점 스캐너 UA SAP 메타데이터 업로더 RCE SAP 개발 서버 탐색 xwaf-test 10.0.30.107 135.237.125.118 406 130.162.156.89 GET /developmentserver/metadatauploader - 0 0 1 차단(OWASP) - 2026-05-01 13:26:29.625 308 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.100 51.161.37.213 404 blog.plura.io GET /응용프로그램-로깅과-분석/ - 0 169 1 탐지(OWASP) - 2026-05-01 12:59:24.661 307 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.100 94.23.188.197 200 blog.plura.io GET /robots.txt - 0 66 1 탐지(OWASP) - 2026-05-01 12:59:22.622 306 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.100 85.208.96.212 200 blog.plura.io GET /ko/column/quantum-era-cryptography/ - 0 31,257 1 탐지(OWASP) - 2026-05-01 12:48:19.102 305 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.101 185.191.171.15 200 blog.plura.io GET /robots.txt - 0 66 1 탐지(OWASP) - 2026-05-01 12:48:17.636 304 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /yindu.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:23.247 303 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /debug-php.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:22.197 302 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /conf.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:20.874 301 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /php-fpm.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:19.574 300 SCANNER>CRITICAL SCANNER>MIDDLE LFI>HIGH A1 A9 A1 환경 파일 접근 UA 누락 + PHP 파일 요청 제한 파일 접근 WAF-Blog 10.90.10.100 172.212.217.10 406 blog.plura.io GET /.env.test.php - 0 0 1 차단(OWASP) - 2026-05-01 11:14:18.010 299 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /oauth.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:16.780 298 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /u.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:15.413 297 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /000.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:13.896 296 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /mimes.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:12.553 295 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /aw.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:10.945 294 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /info_page.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:08.992 처음 이전 다음 © 2016–2026 Qubit Security Inc. All rights reserved. 이용약관 개인정보 처리방침 AI 시스템관리 전체로그 (=) 전체로그 (±1s) 전체로그 (±2s) 전체로그 (±3s) 전체로그 (±5s) 전체로그 (±10s) 전체로그 (±30s) 전체로그 (±60s) 전체로그 (=) 공격자"
+          ],
+          "classification": [],
+          "attackCode": [],
+          "filterName": [],
+          "vulnerableField": [],
+          "other": []
+        }
+      },
+      "log": {
+        "found": true,
+        "selector": "",
+        "clicked": false,
+        "visibleText": "",
+        "rawLogText": "2026. 05. 01. 금요일 최종접속일 : 2026-05-01 15:15:33 대시보드 웹방화벽 호스트보안 마이터 어택 상관분석 보안탐지 전체로그 필터 IP차단 시스템관리 시스템보안관리 안전한OS관리 취약점 점검 보고서 TOOLS MANUAL UPDATE FAQ BLOG NEWS 관리 한국어 QUBITSECURITY Eliot님 안녕하세요! Install Agents 웹방화벽 날짜 (최신순) 20 2026-05-01 IP주소 차단로그 제외 총 로그 : 313 번호 분류 코드 필터명 그룹 호스트 공격자 상태값 호스트(도메인) 메소드 경로 쿼리/요청본문 요청 응답 동일로그 유형 유출정보 날짜 이동 313 SCANNER>CRITICAL A9 Androxgh0st 봇넷 xwaf-test 10.0.30.107 78.153.140.93 406 130.162.156.89 POST / 0x%5B%5D=androxgh0st 20 0 1 차단(OWASP) - 2026-05-01 14:30:32.436 312 SCANNER>CRITICAL LFI>HIGH A1 A1 환경 파일 접근 제한 파일 접근 xwaf-test 10.0.30.107 78.153.140.93 406 130.162.156.89 GET /.env - 0 0 1 차단(OWASP) - 2026-05-01 14:30:31.865 311 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.101 185.191.171.8 200 blog.plura.io GET /ko/threats/powershell-attack-techniques/ - 0 15,943 1 탐지(OWASP) - 2026-05-01 13:37:44.216 310 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.100 85.208.96.208 200 blog.plura.io GET /ko/column/limitations_of_non_decryption_detection/ - 0 29,409 1 탐지(OWASP) - 2026-05-01 13:27:07.563 309 SCANNER>HIGH FILE UPLOAD>CRITICAL RCE>CRITICAL A9 A2 A3 취약점 스캐너 UA SAP 메타데이터 업로더 RCE SAP 개발 서버 탐색 xwaf-test 10.0.30.107 135.237.125.118 406 130.162.156.89 GET /developmentserver/metadatauploader - 0 0 1 차단(OWASP) - 2026-05-01 13:26:29.625 308 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.100 51.161.37.213 404 blog.plura.io GET /응용프로그램-로깅과-분석/ - 0 169 1 탐지(OWASP) - 2026-05-01 12:59:24.661 307 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.100 94.23.188.197 200 blog.plura.io GET /robots.txt - 0 66 1 탐지(OWASP) - 2026-05-01 12:59:22.622 306 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.100 85.208.96.212 200 blog.plura.io GET /ko/column/quantum-era-cryptography/ - 0 31,257 1 탐지(OWASP) - 2026-05-01 12:48:19.102 305 SCANNER>MIDDLE A9 크롤러 봇 WAF-Blog 10.90.10.101 185.191.171.15 200 blog.plura.io GET /robots.txt - 0 66 1 탐지(OWASP) - 2026-05-01 12:48:17.636 304 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /yindu.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:23.247 303 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /debug-php.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:22.197 302 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /conf.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:20.874 301 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /php-fpm.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:19.574 300 SCANNER>CRITICAL SCANNER>MIDDLE LFI>HIGH A1 A9 A1 환경 파일 접근 UA 누락 + PHP 파일 요청 제한 파일 접근 WAF-Blog 10.90.10.100 172.212.217.10 406 blog.plura.io GET /.env.test.php - 0 0 1 차단(OWASP) - 2026-05-01 11:14:18.010 299 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /oauth.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:16.780 298 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /u.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:15.413 297 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /000.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:13.896 296 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /mimes.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:12.553 295 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.101 172.212.217.10 404 blog.plura.io GET /aw.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:10.945 294 SCANNER>MIDDLE A9 UA 누락 + PHP 파일 요청 WAF-Blog 10.90.10.100 172.212.217.10 404 blog.plura.io GET /info_page.php - 0 169 1 탐지(OWASP) - 2026-05-01 11:14:08.992 처음 이전 다음 © 2016–2026 Qubit Security Inc. All rights reserved. 이용약관 개인정보 처리방침 AI 시스템관리 전체로그 (=) 전체로그 (±1s) 전체로그 (±2s) 전체로그 (±3s) 전체로그 (±5s) 전체로그 (±10s) 전체로그 (±30s) 전체로그 (±60s) 전체로그 (=) 공격자",
+        "parsedFields": {
+          "method": "POST",
+          "uri": "/",
+          "host": "130.162.156.89",
+          "headers": {},
+          "body": "",
+          "cookie": "",
+          "referer": "",
+          "userAgent": "",
+          "remoteIp": "78.153.140.93",
+          "responseStatus": "406",
+          "responseBody": "",
+          "requestBody": ""
+        }
+      }
+    },
+    "aiArea": {
+      "found": false,
+      "selectorCandidates": [],
+      "clicked": false,
+      "reason": "이번 단계에서는 AI 분석 버튼을 클릭하지 않음"
+    },
+    "moveMenu": {
+      "found": true,
+      "selectorCandidates": [],
+      "menuLabels": [
+        "전체로그",
+        "시스템관리",
+        "AI",
+        "전체로그 (=)",
+        "전체로그 (±1s)",
+        "전체로그 (±2s)",
+        "전체로그 (±3s)",
+        "전체로그 (±5s)",
+        "전체로그 (±10s)",
+        "전체로그 (±30s)",
+        "전체로그 (±60s)"
+      ],
+      "clicked": false,
+      "reason": "전체로그 이동은 다음 단계에서 별도 처리"
+    },
+    "recommendedNextAction": {
+      "action": "parse-waf-log",
+      "reason": "분석 탭 또는 로그 탭에서 WAF 상세 텍스트가 확인되어 다음 단계에서 보고서용 파싱을 진행할 수 있습니다."
+    },
+    "manualBlockGuidance": {
+      "enabled": true,
+      "autoBlock": false,
+      "attackerIp": "51.161.37.213",
+      "message": "공격자 IP 51.161.37.213에서 총 1개 정탐이 탐지되어 IP주소 차단 검토가 필요합니다. 대표 판단: WAF-S010 Mixed attack types by same IP. 매칭 시나리오: WAF-S010.",
+      "uiAction": "하단 수동차단 버튼을 선택해 웹 화면에서 확인 후 차단하세요.",
+      "stopAfterGuidance": true,
+      "clickedManualBlock": false,
+      "clickedSaveOrConfirm": false,
+      "overlayShown": true,
+      "overlayType": "in-browser-guidance",
+      "overlayTitle": "IP 차단 검토 필요",
+      "manualBlockButtonLocated": false,
+      "manualBlockButtonSelector": "",
+      "matchedScenarios": [
+        10
+      ],
+      "representativeScenario": {
+        "scenarioId": 10,
+        "code": "WAF-S010",
+        "name": "Mixed attack types by same IP",
+        "priorityScore": 60,
+        "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+        "attackerIp": "51.161.37.213"
+      },
+      "suppression": {
+        "suppressed": false,
+        "reason": "",
+        "matchedRuleId": "",
+        "matchedValue": "",
+        "action": ""
+      },
+      "scenarioSummary": "WAF-S010: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+      "scenarioEvidence": [
+        {
+          "scenarioId": 10,
+          "code": "WAF-S010",
+          "title": "Mixed attack types by same IP",
+          "priorityScore": 60,
+          "attackerIp": "51.161.37.213",
+          "attackerIps": [],
+          "reason": "동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+          "evidence": {
+            "threshold": 2,
+            "totalEvents": 1,
+            "distinctAttackTypes": 3,
+            "attackTypes": [
+              "SCANNER",
+              "FILE UPLOAD",
+              "RCE"
+            ],
+            "severities": [
+              "CRITICAL",
+              "HIGH",
+              "MIDDLE"
+            ],
+            "uniquePaths": 1,
+            "samplePaths": [
+              "/응용프로그램-로깅과-분석/"
+            ]
+          }
+        }
+      ],
+      "manualUrl": "https://docs.plura.io/ko/v6/fn/comm/ipblock/manual"
+    },
+    "safeToBuildWafReportNext": true,
+    "screenshots": [
+      "artifacts/waf/screenshots/12-waf-detail-analysis-tab.png",
+      "artifacts/waf/screenshots/13-waf-detail-log-tab.png",
+      "artifacts/waf/screenshots/14-waf-manual-block-guidance.png"
+    ],
+    "notes": [
+      "Row count confirmed: 20",
+      "Selected row 0 by priority policy: blocked=true; detectionType contains \"차단\" or block; risk/classification contains CRITICAL.",
+      "선택한 row 0의 detail action 후보를 클릭했습니다: tbody tr td:nth-child(19) i:nth-of-type(1)",
+      "상세 화면으로 보이는 신호를 확인했습니다.",
+      "WAF 상세 하단 영역에서 분석/로그 탭 후보를 우선 수집했습니다.",
+      "AI 버튼과 이동 메뉴는 후보만 수집하고 클릭하지 않았습니다."
+    ],
+    "errors": [],
+    "manualReviewRequired": true,
+    "browserKeptOpen": false,
+    "autoBlockExecuted": false,
+    "reviewReason": "대표 시나리오 WAF-S010 Mixed attack types by same IP 매칭: 동일 IP 51.161.37.213에서 복수 공격 유형 또는 복수 위험도와 다수 경로가 함께 확인되었습니다.",
+    "reviewIp": "51.161.37.213"
+  }
+}
