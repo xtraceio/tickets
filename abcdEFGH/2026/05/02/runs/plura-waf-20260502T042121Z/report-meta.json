@@ -1,0 +1,38 @@
+{
+  "tenantId": "abcdEFGH",
+  "reportType": "waf",
+  "reportLanguage": "ko",
+  "reportDate": "2026-05-02",
+  "runId": "plura-waf-20260502T042121Z",
+  "publishedAt": "2026-05-02T13:21:47+09:00",
+  "sourceRepo": "quark",
+  "representativeGroupScenario": "WAF-G003",
+  "matchedGroupScenarios": [
+    "WAF-G003"
+  ],
+  "matchedScenarios": [
+    7,
+    10
+  ],
+  "attackerIp": "57.141.14.79",
+  "totalEvents": 3,
+  "mailSent": false,
+  "autoBlockExecuted": false,
+  "autoBlockDryRunIncluded": false,
+  "autoBlockPlanMode": "",
+  "autoBlockWouldBlock": false,
+  "policyWouldBlockCount": 0,
+  "autoBlockCandidateCount": 0,
+  "wafSummaryMermaidIncluded": true,
+  "includedFiles": [
+    "waf-payload.json",
+    "waf-summary.json",
+    "waf-summary.md",
+    "waf-preview.html",
+    "report-meta.json"
+  ],
+  "skippedOptionalFiles": [
+    "auto-block-dry-run.json",
+    "auto-block-dry-run.md"
+  ]
+}
