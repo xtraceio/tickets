@@ -9,9 +9,10 @@
 | 후보 유형 | auto-block approval candidate |
 | IP | 78.153.140.148 |
 | 발생 일자 | 2026-05-04 |
-| sourceRunId | 20260505-075506 |
+| sourceRunId | 20260505-082508 |
 | 실제 차단 실행 | false |
 | 운영자 승인 필요 | true |
+| 실행 상태 | skipped-no-approval |
 
 ## 2. 탐지 요약
 
@@ -51,6 +52,28 @@ AI approve-recommended는 운영자 승인 상태가 아닙니다.
 | 승인자 | - |
 | 승인 시각 | - |
 | 승인 사유 | - |
+
+## 자동 차단 실행 결과
+
+| 항목 | 값 |
+|---|---|
+| 실행 상태 | skipped-no-approval |
+| 실제 차단 실행 | false |
+| 실패 사유 | - |
+| rollback-plan | artifacts/waf/rollback-plan.json |
+
+승인 완료 후보가 있더라도 자동 실행하지 않습니다.
+다음 조치는 `manual-block-prefill`로 운영자가 직접 수동 차단하거나 live auto-block executor 구현/설정을 확인하는 것입니다.
+
+## 검증 결과
+
+| 항목 | 값 |
+|---|---|
+| verify-review 상태 | still-unblocked |
+| 검증 상태 | not-verified |
+| 차단 확인 | false |
+
+verify-review가 still-unblocked를 반환해도 승인 상태는 approved로 유지됩니다.
 
 ## 5. 승인 전 확인 사항
 
