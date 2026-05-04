@@ -4,12 +4,12 @@
 
 | 항목 | 값 |
 |---|---|
-| 상태 | auto-block-failed |
+| 상태 | blocked-after-review |
 | 승인 상태 | approved |
 | 후보 유형 | auto-block approval candidate |
 | IP | 138.226.237.200 |
 | 발생 일자 | 2026-05-04 |
-| sourceRunId | 20260505-083005 |
+| sourceRunId | 20260505-084508 |
 | 실제 차단 실행 | false |
 | 운영자 승인 필요 | true |
 | 실행 상태 | failed |
@@ -70,11 +70,14 @@ AI approve-recommended는 운영자 승인 상태가 아닙니다.
 
 | 항목 | 값 |
 |---|---|
-| verify-review 상태 | still-unblocked |
-| 검증 상태 | not-verified |
-| 차단 확인 | false |
+| verify-review 상태 | blocked-after-review |
+| 검증 상태 | verified |
+| 차단 확인 | true |
 
-verify-review가 still-unblocked를 반환해도 승인 상태는 approved로 유지됩니다.
+
+## 최종 상태
+
+수동 차단 후 차단 목록에서 확인되었습니다.
 
 ## 5. 승인 전 확인 사항
 
