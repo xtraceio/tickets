@@ -5,11 +5,11 @@
 | 항목 | 값 |
 |---|---|
 | 상태 | auto-block-candidate |
-| 승인 상태 | pending |
+| 승인 상태 | approved |
 | 후보 유형 | auto-block approval candidate |
 | IP | 138.226.237.200 |
 | 발생 일자 | 2026-05-04 |
-| sourceRunId | 20260505-074004 |
+| sourceRunId | 20260505-075506 |
 | 실제 차단 실행 | false |
 | 운영자 승인 필요 | true |
 
@@ -42,6 +42,15 @@
 
 AI approve-recommended는 운영자 승인 상태가 아닙니다.  
 운영자 승인은 반드시 ticket-approve CLI로만 수행합니다.
+
+## 자동 차단 승인
+
+| 항목 | 값 |
+|---|---|
+| 승인 상태 | approved |
+| 승인자 | operator |
+| 승인 시각 | 2026-05-04T22:57:14.499Z |
+| 승인 사유 | Approved after operator review and AI recommendation |
 
 ## 5. 승인 전 확인 사항
 
