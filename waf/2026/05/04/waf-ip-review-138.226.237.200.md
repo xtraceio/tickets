@@ -9,7 +9,7 @@
 | 후보 유형 | auto-block approval candidate |
 | IP | 138.226.237.200 |
 | 발생 일자 | 2026-05-04 |
-| sourceRunId | 20260505-082508 |
+| sourceRunId | 20260505-083005 |
 | 실제 차단 실행 | false |
 | 운영자 승인 필요 | true |
 | 실행 상태 | failed |
