@@ -1,4 +1,4 @@
-# WAF IP 승인 검토 Ticket
+﻿# WAF IP 승인 검토 Ticket
 
 ## 1. 기본 정보
 
