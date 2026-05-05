@@ -5,7 +5,7 @@
 | 항목 | 값 |
 |---|---|
 | 상태 | auto-block-candidate |
-| 승인 상태 | pending |
+| 승인 상태 | approved |
 | 후보 유형 | auto-block approval candidate |
 | IP | 164.155.49.54 |
 | 발생 일자 | 2026-05-05 |
@@ -40,10 +40,10 @@
 
 | 항목 | 값 |
 |---|---|
-| 승인 상태 | pending |
-| 승인자 | - |
-| 승인 시각 | - |
-| 승인 사유 | - |
+| 승인 상태 | approved |
+| 승인자 | operator |
+| 승인 시각 | 2026-05-05T21:40:23.998Z |
+| 승인 사유 | Approved after operator review for AutoBlock rehearsal |
 
 ## 5. AI 차단 판단
 
@@ -69,6 +69,9 @@
 
 운영자 승인 후 자동 차단을 권고합니다.
 
+AI approve-recommended는 운영자 승인 상태가 아닙니다.
+운영자 승인은 반드시 ticket-approve CLI로만 수행합니다.
+
 ## 8. 승인 전 확인 사항
 
 - [ ] IP가 내부/협력사/정상 크롤러/점검망이 아닌지 확인
@@ -81,7 +84,7 @@
 ## 9. 운영자 승인 명령
 
 ```powershell
-npm run plura:waf:ticket-approve -- --ip=164.155.49.54 --reason="Approved after operator review for AutoBlock rehearsal"
+npm run plura:waf:ticket-approve -- --ip=164.155.49.54 --reason="Approved after operator review and AI recommendation"
 ```
 
 ## 10. 운영자 반려 명령
@@ -98,7 +101,7 @@ npm run plura:waf:manual-block-prefill -- --ip=164.155.49.54
 
 주의: 수동 차단 보조 명령은 IP 입력까지만 수행하며, 최종 확인 버튼은 운영자가 직접 클릭해야 합니다.
 
-수동 차단 화면: [https://d-xdr.plura.io/ipblock/manual/waf](https://d-xdr.plura.io/ipblock/manual/waf)
+수동 차단 화면: https://d-xdr.plura.io/ipblock/manual/waf
 
 ## 12. 승인 후 AutoBlock preflight
 
