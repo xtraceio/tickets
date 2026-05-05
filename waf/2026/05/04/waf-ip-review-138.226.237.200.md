@@ -9,7 +9,7 @@
 | 후보 유형 | auto-block approval candidate |
 | IP | 138.226.237.200 |
 | 발생 일자 | 2026-05-04 |
-| sourceRunId | 2026-05-04T23:54:38.328Z |
+| sourceRunId | 20260505-090508 |
 | 실제 차단 실행 | false |
 | 운영자 승인 필요 | true |
 | 실행 상태 | failed |
@@ -137,56 +137,3 @@ npm run plura:waf:monitor-once
 * 이 ticket 파일 생성은 IP 차단을 수행하지 않습니다.
 * 실제 차단은 운영자 승인 후 별도 수동 실행에서만 수행합니다.
 * Scheduler는 monitor-only 상태를 유지합니다.
-
-## 자동 차단 평가
-
-| 항목 | 값 |
-|---|---|
-| 평가 상태 | auto-block-candidate |
-| dry-run | true |
-| 정책 파일 | config/waf-auto-block-policy.json |
-| 매칭 정책 | critical-rce-webshell-lfi |
-| 실제 차단 실행 | false |
-| 판단 사유 | High-confidence exploit attempt suitable for auto-block candidate review. |
-
-## 자동 차단 실행
-
-- 이번 단계에서는 실제 차단을 수행하지 않음
-- 자동 차단 실행 전 운영자 승인 또는 별도 실행 모드 필요
-
-## AI 차단 판단
-
-| 항목 | 값 |
-|---|---|
-| AI 판단 상태 | approve-recommended |
-| 차단 권고 | true |
-| 오탐 가능성 | 낮음 |
-| 위험도 | 치명 |
-| 신뢰도 | high |
-| 판단 방식 | rule-based-gpt-ready |
-| 판단 시각 | 2026-05-04T23:55:08.967Z |
-
-## AI 판단 근거
-
-- auto-block policy matched
-- wouldBlock=true
-- matchedRuleId=critical-rce-webshell-lfi
-- high-risk WAF detection
-- attack-pattern evidence present
-- new or unblocked candidate pending operator approval
-
-## AI 권고
-
-운영자 승인 후 자동 차단을 권고합니다.
-
-## AI Provider
-
-| Item | Value |
-|---|---|
-| AI provider | rule-based |
-| GPT enabled | false |
-| GPT dry-run | true |
-| 판단 모델 | gpt-5.5-thinking |
-| GPT status | SKIPPED |
-
-AI approve-recommended is not operator approval. Operator approval must use the ticket-approve CLI.
