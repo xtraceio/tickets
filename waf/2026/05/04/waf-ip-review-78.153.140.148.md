@@ -12,7 +12,7 @@
 | sourceRunId | 2026-05-05T00:03:27.002Z |
 | 실제 차단 실행 | false |
 | 운영자 승인 필요 | true |
-| 실행 상태 | not-attempted |
+| 실행 상태 | completed-by-manual-review |
 
 ## 2. 탐지 요약
 
@@ -52,6 +52,44 @@ AI approve-recommended는 운영자 승인 상태가 아닙니다.
 | 승인자 | operator |
 | 승인 시각 | 2026-05-04T23:58:17.448Z |
 | 승인 사유 | Approved after operator review and AI recommendation |
+
+## 자동 차단 실행 결과
+
+| 항목 | 값 |
+|---|---|
+| 실행 방식 | manual-block-prefill + operator confirmation |
+| 실제 자동 차단 실행 | false |
+| 수동 차단 완료 | true |
+
+## 검증 결과
+
+| 항목 | 값 |
+|---|---|
+| verify-review 상태 | blocked-after-review |
+| 검증 상태 | verified |
+| 차단 확인 | true |
+
+## 최종 상태
+
+수동 차단 후 차단 목록에서 확인되었습니다.  
+추가 차단 조치는 필요하지 않습니다.
+
+## 수동 차단 보조 명령
+
+```powershell
+npm run plura:waf:manual-block-prefill -- --ip=78.153.140.148
+```
+
+주의: 수동 차단 보조 명령은 IP 입력까지만 수행하며, 최종 확인 버튼은 운영자가 직접 클릭해야 합니다.
+
+수동 차단 화면: [https://d-xdr.plura.io/ipblock/manual/waf](https://d-xdr.plura.io/ipblock/manual/waf)
+
+## 안전 원칙
+
+* 이 ticket은 이미 수동 차단 완료 상태입니다.
+* 추가 자동 차단 실행은 필요하지 않습니다.
+* Scheduler는 monitor-only 상태를 유지합니다.
+* AutoBlock task는 preflight 통과 및 운영자 명시 판단 없이는 실행하지 않습니다.
 
 ## 자동 차단 실행
 

@@ -12,8 +12,8 @@
 | sourceRunId | 2026-05-05T00:03:27.002Z |
 | 실제 차단 실행 | false |
 | 운영자 승인 필요 | true |
-| 실행 상태 | failed |
-| 실행 실패 사유 | Live auto-block executor is not configured. |
+| 실행 상태 | completed-by-manual-review |
+| 이전 자동 실행 실패 사유 | Live auto-block executor is not configured. |
 
 ## 2. 탐지 요약
 
@@ -58,9 +58,10 @@ AI approve-recommended는 운영자 승인 상태가 아닙니다.
 
 | 항목 | 값 |
 |---|---|
-| 실행 상태 | failed |
-| 실제 차단 실행 | false |
-| 실패 사유 | Live auto-block executor is not configured. |
+| 실행 방식 | manual-block-prefill + operator confirmation |
+| 실제 자동 차단 실행 | false |
+| 수동 차단 완료 | true |
+| 이전 자동 실행 실패 사유 | Live auto-block executor is not configured. |
 | rollback-plan | artifacts/waf/rollback-plan.json |
 
 승인 완료 후보가 있더라도 자동 실행하지 않습니다.
@@ -77,7 +78,8 @@ AI approve-recommended는 운영자 승인 상태가 아닙니다.
 
 ## 최종 상태
 
-수동 차단 후 차단 목록에서 확인되었습니다.
+수동 차단 후 차단 목록에서 확인되었습니다.  
+추가 차단 조치는 필요하지 않습니다.
 
 ## 5. 승인 전 확인 사항
 
@@ -108,7 +110,7 @@ npm run plura:waf:manual-block-prefill -- --ip=138.226.237.200
 
 주의: 수동 차단 보조 명령은 IP 입력까지만 수행하며, 최종 확인 버튼은 운영자가 직접 클릭해야 합니다.
 
-수동 차단 화면: https://d-xdr.plura.io/ipblock/manual/waf
+수동 차단 화면: [https://d-xdr.plura.io/ipblock/manual/waf](https://d-xdr.plura.io/ipblock/manual/waf)
 
 ## 9. 승인 후 1건 실행 원칙
 
@@ -132,11 +134,10 @@ npm run plura:waf:monitor-once
 
 ## 10. 안전 원칙
 
-* 이 ticket은 승인 검토용입니다.
-* 이 ticket 파일 생성은 ticket approve/reject를 수행하지 않습니다.
-* 이 ticket 파일 생성은 IP 차단을 수행하지 않습니다.
-* 실제 차단은 운영자 승인 후 별도 수동 실행에서만 수행합니다.
+* 이 ticket은 이미 수동 차단 완료 상태입니다.
+* 추가 자동 차단 실행은 필요하지 않습니다.
 * Scheduler는 monitor-only 상태를 유지합니다.
+* AutoBlock task는 preflight 통과 및 운영자 명시 판단 없이는 실행하지 않습니다.
 
 ## 자동 차단 평가
 
